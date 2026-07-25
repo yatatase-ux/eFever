@@ -19,6 +19,7 @@ public:
 
 
 // ƒ}ƒNƒ‚Ì’è‹`---------------------------------------------
+
 #define SCENECLASS(className)\
 	className();\
 	void Input()override;\

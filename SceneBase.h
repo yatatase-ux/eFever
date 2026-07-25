@@ -30,13 +30,13 @@ public:
 className::className()
 
 #define sInput(className)\
-className::Input()
+void className::Input()
 
 #define sUpdate(className)\
-className::Update()
+void className::Update()
 
 #define sDraw(className)\
-className::Draw()
+void className::Draw()
 
 #define sSound(className)\
-className::Sound()
+void className::Sound()

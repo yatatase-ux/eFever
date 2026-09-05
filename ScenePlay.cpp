@@ -1,4 +1,2 @@
 #include "ScenePlay.h"
 
-
-//  ‚¤‚ñ‚¿

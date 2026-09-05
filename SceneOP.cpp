@@ -10,7 +10,7 @@ sCONSTRUCTOR(SceneOP)
 
 sInput(SceneOP)
 {
-	if (CheckHitKey(KEY_INPUT_SPACE))
+	if (key->Push(SPACE))
 	{
 		return SceneState::Play;
 	}

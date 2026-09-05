@@ -130,7 +130,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp" />
-    <ClCompile Include="KeyAction.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="SceneOP.cpp" />

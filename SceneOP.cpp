@@ -18,7 +18,12 @@ sUpdate(SceneOP)
 
 sDraw(SceneOP)
 {
+	DrawBox(0,0,1280,720,GetColor(255,255,255),TRUE);
 	DrawGraph(0, 0, op_image, TRUE);
+
+	SetFontSize(50);
+	DrawString(850,500,"NPCí",GetColor(0,0,0));
+	DrawString(850,600, "ƒIƒtƒ‰ƒCƒ“í", GetColor(0, 0, 0));
 }
 
 sSound(SceneOP)

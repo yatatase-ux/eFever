@@ -11,6 +11,13 @@ private:
 	Float2 gridPos;
 	Float2 gridSize;
 
+	int maru_image;
+	int batu_image;
+	int hanten_image;
+	int kakutei_image;
+	int hantenkakutei_image;
+	int puchun_image;
+
 public:
 
 	SCENECLASS(ScenePlay);

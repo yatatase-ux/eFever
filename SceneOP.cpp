@@ -5,6 +5,7 @@ sCONSTRUCTOR(SceneOP)
 {
 	op_image = LoadGraph("image/OP.png");
 	op_yajirusi = LoadGraph("image/yajirusi.png");
+	mode = true;
 }
 
 sInput(SceneOP)

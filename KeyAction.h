@@ -8,6 +8,8 @@ enum {
 	SPACE,
 	UP,
 	DOWN,
+	RIGHT,
+	LEFT,
 
 	USE_KEY_MAX
 };

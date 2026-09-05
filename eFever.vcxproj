@@ -129,6 +129,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DPadPlayer.cpp" />
     <ClCompile Include="Float2.cpp" />
     <ClCompile Include="Function.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -139,6 +140,7 @@
     <ClCompile Include="SceneResult.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DPadPlayer.h" />
     <ClInclude Include="Float2.h" />
     <ClInclude Include="Function.h" />
     <ClInclude Include="Game.h" />

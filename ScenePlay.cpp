@@ -40,6 +40,7 @@ sDraw(ScenePlay)
 		DrawLineAA(sPos.x + i * n, sPos.y, sPos.x + i * n, ePos.y, GetColor(0,0,0), 5.0f);
 		DrawLineAA(sPos.x, sPos.y + i * n, ePos.x, sPos.y + i * n, GetColor(0,0,0), 5.0f);
 	}
+
 }
 
 sSound(ScenePlay)

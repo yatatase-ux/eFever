@@ -1,5 +1,6 @@
 #pragma once
 #include <memory>
+
 #include "SceneBase.h"
 #include "SceneOP.h"
 #include "ScenePlay.h"
@@ -14,7 +15,6 @@ private:
 public:
 
 	SceneManager();
-	~SceneManager();
 
 	void Input();
 	void Update();

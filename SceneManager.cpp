@@ -7,22 +7,22 @@ SceneManager::SceneManager()
 
 void SceneManager::Input()
 {
-
+	scene->Input();
 }
 
 void SceneManager::Update()
 {
-
+	scene->Update();
 }
 
 void SceneManager::Draw()
 {
-
+	scene->Draw();
 }
 
 void SceneManager::Sound()
 {
-
+	scene->Sound();
 }
 
 void SceneManager::SceneChange(int nextScene)

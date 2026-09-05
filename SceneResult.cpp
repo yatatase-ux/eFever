@@ -2,7 +2,11 @@
 
 sCONSTRUCTOR(SceneResult)
 {
-
+	win_image = LoadGraph("image/win.png");
+	lose_image = LoadGraph("image/lose.png");
+	arrow = LoadGraph("image/yajirusi.png");
+	end_image = LoadGraph("image/end.png");
+	continue_image = LoadGraph("image/keizoku.png");
 }
 
 sInput(SceneResult)
@@ -22,7 +26,7 @@ sUpdate(SceneResult)
 
 sDraw(SceneResult)
 {
-	DrawString(200, 200, "Result", GetColor(255, 255, 255));
+	DrawGraph(200, 300, continue_image, TRUE);
 }
 
 sSound(SceneResult)

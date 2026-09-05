@@ -40,7 +40,8 @@ sDraw(ScenePlay)
 		DrawLineAA(sPos.x + i * n, sPos.y, sPos.x + i * n, ePos.y, GetColor(0,0,0), 5.0f);
 		DrawLineAA(sPos.x, sPos.y + i * n, ePos.x, sPos.y + i * n, GetColor(0,0,0), 5.0f);
 	}
-
+	DrawGraph(558, 440, maru_image, TRUE);
+	DrawGraph(558-166, 440, batu_image, TRUE);
 }
 
 sSound(ScenePlay)

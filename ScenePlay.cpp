@@ -7,7 +7,7 @@ sCONSTRUCTOR(ScenePlay)
 
 sInput(ScenePlay)
 {
-
+	return SceneState::None;
 }
 
 sUpdate(ScenePlay)

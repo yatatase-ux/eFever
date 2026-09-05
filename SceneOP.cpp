@@ -8,7 +8,12 @@ sCONSTRUCTOR(SceneOP)
 
 sInput(SceneOP)
 {
+	if (CheckHitKey(KEY_INPUT_SPACE))
+	{
+		return SceneState::Play;
+	}
 
+	return SceneState::None;
 }
 
 sUpdate(SceneOP)

@@ -6,11 +6,15 @@
 #include "ScenePlay.h"
 #include "SceneResult.h"
 
+#include "KeyAction.h"
+
 class SceneManager
 {
 private:
 
 	std::unique_ptr<SceneBase> scene;
+
+	KeyAction key;
 
 public:
 

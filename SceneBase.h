@@ -1,4 +1,5 @@
 #pragma once
+#include "KeyAction.h"
 
 enum class SceneState
 {
@@ -11,10 +12,12 @@ enum class SceneState
 class SceneBase
 {
 protected:
+	KeyAction* key;
 
 public:
 
-	SceneBase() {};
+	SceneBase(KeyAction* arg_key) 
+			: key(arg_key){};
 	virtual ~SceneBase() {};
 
 	virtual SceneState Input() = 0;
@@ -28,14 +31,15 @@ public:
 // É}ÉNÉçÇÃíËã`---------------------------------------------
 
 #define SCENECLASS(className)\
-	className();\
+	className(KeyAction* arg_key);\
 	SceneState Input()override;\
 	void Update()override;\
 	void Draw()override;\
 	void Sound()override;
 
 #define sCONSTRUCTOR(className)\
-className::className()
+className::className(KeyAction* arg_key)\
+				: SceneBase(arg_key)
 
 #define sInput(className)\
 SceneState className::Input()

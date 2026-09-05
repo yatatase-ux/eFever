@@ -2,7 +2,7 @@
 
 SceneManager::SceneManager()
 {
-	scene = std::make_unique<SceneOP>();
+	scene = std::make_unique<SceneOP>(&key);
 }
 
 void SceneManager::Input()
@@ -34,15 +34,15 @@ void SceneManager::SceneChange(SceneState nextScene)
 		break;
 
 	case SceneState::OP:
-		scene = std::make_unique<SceneOP>();
+		scene = std::make_unique<SceneOP>(&key);
 		break;
 
 	case SceneState::Play:
-		scene = std::make_unique<ScenePlay>();
+		scene = std::make_unique<ScenePlay>(&key);
 		break;
 
 	case SceneState::Result:
-		scene = std::make_unique<SceneResult>();
+		scene = std::make_unique<SceneResult>(&key);
 		break;
 	}
 }

@@ -17,7 +17,7 @@ public:
 	SceneBase() {};
 	virtual ~SceneBase() {};
 
-	virtual void Input() = 0;
+	virtual SceneState Input() = 0;
 	virtual void Update() = 0;
 	virtual void Draw() = 0;
 	virtual void Sound() = 0;
@@ -29,7 +29,7 @@ public:
 
 #define SCENECLASS(className)\
 	className();\
-	void Input()override;\
+	SceneState Input()override;\
 	void Update()override;\
 	void Draw()override;\
 	void Sound()override;
@@ -38,7 +38,7 @@ public:
 className::className()
 
 #define sInput(className)\
-void className::Input()
+SceneState className::Input()
 
 #define sUpdate(className)\
 void className::Update()

@@ -7,12 +7,13 @@ SceneManager::SceneManager()
 
 void SceneManager::Input()
 {
-	scene->Input();
+	SceneState next = scene->Input();
+	SceneChange(next);
 }
 
 void SceneManager::Update()
 {
-	scene->Update();
+	 scene->Update();
 }
 
 void SceneManager::Draw()
@@ -25,10 +26,23 @@ void SceneManager::Sound()
 	scene->Sound();
 }
 
-void SceneManager::SceneChange(int nextScene)
+void SceneManager::SceneChange(SceneState nextScene)
 {
 	switch (nextScene)
 	{
-		
+	case SceneState::None:
+		break;
+
+	case SceneState::OP:
+		scene = std::make_unique<SceneOP>();
+		break;
+
+	case SceneState::Play:
+		scene = std::make_unique<ScenePlay>();
+		break;
+
+	case SceneState::Result:
+		scene = std::make_unique<SceneResult>();
+		break;
 	}
 }

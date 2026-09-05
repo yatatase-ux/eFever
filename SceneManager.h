@@ -21,5 +21,5 @@ public:
 	void Draw();
 	void Sound();
 
-	void SceneChange(int nextScene);
+	void SceneChange(SceneState nextScene);
 };

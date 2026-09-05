@@ -19,9 +19,11 @@ protected:
 	int key_type[USE_KEY_MAX] =
 	{
 		KEY_INPUT_SPACE,
+		KEY_INPUT_UP,
+		KEY_INPUT_DOWN
 	};
 
-	bool key_sw[USE_KEY_MAX] = { false };
+	bool key_sw[USE_KEY_MAX] = { false,false,false };
 
 public:
 

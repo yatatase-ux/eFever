@@ -3,9 +3,13 @@
 
 sCONSTRUCTOR(SceneOP)
 {
-	op_image = LoadGraph("image/OP.png");
-	op_yajirusi = LoadGraph("image/yajirusi.png");
-	mode = true;
+	BG_Image = LoadGraph("image/OP.png");
+
+	arrow = LoadGraph("image/yajirusi.png");
+	arrow_pos = { 750.0f, 470.0f };
+
+	npc_mode = true;
+
 }
 
 sInput(SceneOP)
@@ -14,6 +18,11 @@ sInput(SceneOP)
 	{
 		return SceneState::Play;
 	}
+
+	if (key->Push(UP) || key->Push(DOWN)) npc_mode = (npc_mode) ? false : true;
+
+	if(npc_mode) arrow_pos = { 750.0f, 470.0f };
+	else		 arrow_pos = { 750.0f, 570.0f };
 
 	return SceneState::None;
 }
@@ -26,13 +35,13 @@ sUpdate(SceneOP)
 sDraw(SceneOP)
 {
 	DrawBox(0,0,1280,720,GetColor(255,255,255),TRUE);
-	DrawGraph(0, 0, op_image, TRUE);
+	DrawGraph(0, 0, BG_Image, TRUE);
 
-	DrawGraph(750, 470, op_yajirusi, TRUE);
+	DrawGraphF(arrow_pos.x, arrow_pos.y, arrow, TRUE);
 
 	SetFontSize(50);
 	DrawString(850,500,"NPC戦",GetColor(0,0,0));
-	DrawString(850,600, "オフライン戦", GetColor(0, 0, 0));
+	DrawString(850,600, "フレンド戦", GetColor(0, 0, 0));
 	
 }
 

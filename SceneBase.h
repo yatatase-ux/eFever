@@ -1,5 +1,12 @@
 #pragma once
 
+enum class SceneState
+{
+	None,
+	OP,
+	Play,
+	Result
+};
 
 class SceneBase
 {

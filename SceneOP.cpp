@@ -2,7 +2,7 @@
 
 sCONSTRUCTOR(SceneOP)
 {
-
+	// ‚±‚ñ‚±‚ñ
 }
 
 sInput(SceneOP)

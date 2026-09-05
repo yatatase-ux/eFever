@@ -3,6 +3,7 @@
 sCONSTRUCTOR(SceneOP)
 {
 	// ‚±‚ñ‚±‚ñ
+	// ‚±‚ñ‚±‚ñ2ndSeason
 }
 
 sInput(SceneOP)

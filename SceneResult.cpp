@@ -26,7 +26,8 @@ sUpdate(SceneResult)
 
 sDraw(SceneResult)
 {
-	DrawGraph(200, 300, continue_image, TRUE);
+	DrawGraph(500, 0, continue_image, TRUE);
+	DrawGraph(900, 500, end_image, TRUE);
 }
 
 sSound(SceneResult)

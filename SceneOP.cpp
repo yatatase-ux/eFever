@@ -18,7 +18,7 @@ sUpdate(SceneOP)
 
 sDraw(SceneOP)
 {
-		DrawGraph(0, 0, op_image, TRUE);
+	DrawGraph(0, 0, op_image, TRUE);
 }
 
 sSound(SceneOP)

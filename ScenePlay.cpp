@@ -2,7 +2,8 @@
 
 sCONSTRUCTOR(ScenePlay)
 {
-
+	gridPos = { WINDOW_WF / 2.0f, WINDOW_HF / 2.0f };
+	gridSize = { 500.0f, 500.0f };
 }
 
 sInput(ScenePlay)
@@ -22,7 +23,8 @@ sUpdate(ScenePlay)
 
 sDraw(ScenePlay)
 {
-	DrawString(200, 200, "Play", GetColor(255, 255, 255));
+	DrawCenterBox(gridPos, gridSize, GetColor(0, 128, 0), TRUE);
+
 }
 
 sSound(ScenePlay)

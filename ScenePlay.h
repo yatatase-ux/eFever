@@ -3,6 +3,11 @@
 
 class ScenePlay : public SceneBase
 {
+private:
+
+public:
+
+	SCENECLASS(ScenePlay);
 
 };
 

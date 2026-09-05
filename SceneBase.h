@@ -8,7 +8,7 @@ protected:
 public:
 
 	SceneBase() {};
-	~SceneBase() {};
+	virtual ~SceneBase() {};
 
 	virtual void Input() = 0;
 	virtual void Update() = 0;

@@ -15,8 +15,9 @@ void Grid::Update()
 
 void Grid::Draw()
 {
+	// —Î‚Ì”Õ
 	DrawCenterBox(gridPos, gridSize, GetColor(0, 128, 0), TRUE);
-
+	// •‚Ìƒ‰ƒCƒ“
 	Float2 sPos = gridPos - gridSize / 2.0f;
 	Float2 ePos = sPos + gridSize;
 	float n = gridSize.x / 3.0f;

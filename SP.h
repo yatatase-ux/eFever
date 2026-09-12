@@ -16,5 +16,6 @@ public:
 
 	void Init();
 	void Update();
+	void SetMovieFlag(bool flag);
 	void end();
 };

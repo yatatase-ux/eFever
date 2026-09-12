@@ -8,6 +8,11 @@ void SP::Init()
 	movie_flag = false;
 }
 
+void SP::SetMovieFlag(bool flag)
+{
+	movie_flag = true;
+}
+
 void SP::Update()
 {
 	if (movie_flag)
@@ -15,4 +20,5 @@ void SP::Update()
 		PlayMovieToGraph(puchun);
 	}
 }
+
 

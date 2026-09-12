@@ -2,6 +2,8 @@
 
 sCONSTRUCTOR(ScenePlay)
 {
+	Cell::ImageLoad();
+
 	maru_image = LoadGraph("image/maru.png");
 	batu_image = LoadGraph("image/batu.png");
 	hanten_image = LoadGraph("image/hanten.png");

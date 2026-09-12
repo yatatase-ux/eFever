@@ -16,12 +16,12 @@ private:
 
 	Float2 pos;
 	Mark mark;
-	int markImage[MarkMax];
+	static int markImage[MarkMax];
 
 public:
 	Cell() = default;
 	Cell(Float2 arg_pos);
-	void ImageLoad();
+	static void ImageLoad();
 
 	void Draw();
 };

@@ -6,7 +6,7 @@ int Cell::markImage[MarkMax] = {-1, -1, -1};
 Cell::Cell(Float2 arg_pos)
 	:pos(arg_pos)
 {
-	mark = Mark::Circle;
+	mark = Mark::None;
 }
 
 Cell::~Cell()

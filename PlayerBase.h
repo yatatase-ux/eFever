@@ -18,7 +18,7 @@ public:
 	virtual void Draw() = 0;
 	virtual void Sound() = 0;
 
-	virtual Int2 GetSelectCell() { return selectCell; };
+	virtual Int2 GetSelectCell() = 0;
 };
 
 #define PlayerClass(className)\

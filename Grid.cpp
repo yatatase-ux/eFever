@@ -44,6 +44,8 @@ void Grid::Input()
 void Grid::Update()
 {
 	player->Update();
+
+	selectCell = player->GetSelectCell();
 }
 
 void Grid::Draw()

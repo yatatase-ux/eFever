@@ -1,6 +1,7 @@
 #include "ScenePlay.h"
 
-sCONSTRUCTOR(ScenePlay)
+sCONSTRUCTOR(ScenePlay),
+grid{Grid(key)}
 {
 	Cell::ImageLoad();
 
@@ -24,6 +25,8 @@ sInput(ScenePlay)
 	{
 		sp.SetMovieFlag(true);
 	}
+
+	grid.Input();
 
 	return SceneState::None;
 }

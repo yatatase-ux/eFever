@@ -9,6 +9,13 @@ Cell::Cell(Float2 arg_pos)
 	mark = Mark::Circle;
 }
 
+Cell::~Cell()
+{
+	DeleteGraph(markImage[0]);
+	DeleteGraph(markImage[1]);
+	DeleteGraph(markImage[2]);
+}
+
 void Cell::ImageLoad()
 {
 	markImage[0] = -1;

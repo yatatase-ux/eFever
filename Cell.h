@@ -21,6 +21,8 @@ private:
 public:
 	Cell() = default;
 	Cell(Float2 arg_pos);
+	~Cell();
+
 	static void ImageLoad();
 
 	void Draw();

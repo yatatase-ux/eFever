@@ -2,18 +2,33 @@
 #include "DxLib.h"
 #include "Function.h"
 
-Grid::Grid():
-	cells{
-	{
-	pos,pos,pos
-},
-	{
-		pos, pos, pos
-}
-}
+Grid::Grid()
 {
 	gridPos = { WINDOW_WF / 2.0f, WINDOW_HF / 2.0f };
 	gridSize = { 500.0f, 500.0f };
+
+	// 盤の左上座標(基準点)を計算
+	Float2 sPos = gridPos - gridSize / 2.0f;
+	// 1マスの一辺のサイズ(500 / 3)
+	float cellSize = gridSize.x / 3.0f;
+
+	for (int h = 0; h < 3; h++)
+	{
+		for (int w = 0; w < 3; w++)
+		{
+			// 各マスの中心座標を計算
+			// sPos(左上)から、w列目・h行目ぶん右下にずらし、
+			// さらにマス半分ぶん(cellSize / 2)足して中心に合わせる
+			Float2 cellPos = sPos + Float2(
+				cellSize * w + cellSize / 2.0f,
+				cellSize * h + cellSize / 2.0f
+			);
+
+			// デフォルト構築されたCellに、正しい座標を持つCellを代入し直す
+			// (Cell(Float2)コンストラクタが呼ばれ、mark = Mark::Noneもここで設定される)
+			cells[h][w] = Cell(cellPos);
+		}
+	}
 }
 
 void Grid::Update()
@@ -35,6 +50,7 @@ void Grid::Draw()
 		DrawLineAA(sPos.x, sPos.y + i * n, ePos.x, sPos.y + i * n, GetColor(0, 0, 0), 5.0f);
 	}
 
+	// マルとバツの描画
 	for (int h = 0; h < 3; h++)
 	{
 		for (int w = 0; w < 3; w++)

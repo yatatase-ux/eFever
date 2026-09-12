@@ -21,4 +21,10 @@ void SP::Update()
 	}
 }
 
-
+void SP::Draw()
+{
+	if (movie_flag)
+	{
+		DrawExtendGraph(0, 0, 1280, 720, puchun, TRUE);
+	}
+}

@@ -3,7 +3,7 @@
 DPadPlayer::DPadPlayer(KeyAction* arg_key)
 	: key(arg_key)
 {
-
+	
 }
 
 void DPadPlayer::Input()

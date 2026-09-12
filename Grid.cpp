@@ -2,7 +2,15 @@
 #include "DxLib.h"
 #include "Function.h"
 
-Grid::Grid()
+Grid::Grid():
+	cells{
+	{
+	pos,pos,pos
+},
+	{
+		pos, pos, pos
+}
+}
 {
 	gridPos = { WINDOW_WF / 2.0f, WINDOW_HF / 2.0f };
 	gridSize = { 500.0f, 500.0f };
@@ -26,4 +34,13 @@ void Grid::Draw()
 		DrawLineAA(sPos.x + i * n, sPos.y, sPos.x + i * n, ePos.y, GetColor(0, 0, 0), 5.0f);
 		DrawLineAA(sPos.x, sPos.y + i * n, ePos.x, sPos.y + i * n, GetColor(0, 0, 0), 5.0f);
 	}
+
+	for (int h = 0; h < 3; h++)
+	{
+		for (int w = 0; w < 3; w++)
+		{
+			cells[h][w].Draw();
+		}
+	}
+	
 }

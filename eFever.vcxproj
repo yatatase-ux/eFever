@@ -138,6 +138,7 @@
     <ClCompile Include="Int2.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="PlayerBase.cpp" />
+    <ClCompile Include="PreAlert .cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="SceneOP.cpp" />
     <ClCompile Include="ScenePlay.cpp" />
@@ -155,6 +156,7 @@
     <ClInclude Include="Int2.h" />
     <ClInclude Include="KeyAction.h" />
     <ClInclude Include="PlayerBase.h" />
+    <ClInclude Include="PreAlert .h" />
     <ClInclude Include="SceneBase.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="SceneOP.h" />

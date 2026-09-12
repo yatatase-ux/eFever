@@ -31,8 +31,8 @@ sUpdate(ScenePlay)
 sDraw(ScenePlay)
 {
 
-	grid.Draw();rawLineAA(sPos.x, sPos.y + i * n, ePos.x, sPos.y + i * n, GetColor(0,0,0), 5.0f);
-	//}
+	grid.Draw();
+
 	DrawGraph(558, 440, maru_image, TRUE);
 	DrawGraph(558-166, 440, batu_image, TRUE);
 }

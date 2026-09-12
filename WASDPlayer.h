@@ -1,11 +1,13 @@
 #pragma once
 #include "PlayerBase.h"
 
-class WASDPlayer
+class WASDPlayer : public PlayerBase
 {
 private:
 
 public:
+
+	PlayerClass(WASDPlayer);
 
 };
 

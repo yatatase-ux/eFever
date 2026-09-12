@@ -1,10 +1,13 @@
 #pragma once
 #include "KeyAction.h"
+#include "Int2.h"
 
 class PlayerBase
 {
 protected:
 	KeyAction* key;
+
+	Int2 selectCell;
 
 public:
 	PlayerBase(KeyAction* arg_key)
@@ -14,6 +17,8 @@ public:
 	virtual void Update() = 0;
 	virtual void Draw() = 0;
 	virtual void Sound() = 0;
+
+	virtual Int2 GetSelectCell() { return selectCell; };
 };
 
 #define PlayerClass(className)\
@@ -21,7 +26,8 @@ public:
 	void Input()override;\
 	void Update()override;\
 	void Draw()override;\
-	void Sound()override;
+	void Sound()override;\
+	Int2 GetSelectCell()override;
 
 #define PlayerConstructor(className)\
 className::className(KeyAction* arg_key)\

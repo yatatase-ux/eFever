@@ -26,5 +26,7 @@ public:
 	static void ImageLoad();
 
 	void Draw();
+
+	Float2 GetPos() { return pos; };
 };
 

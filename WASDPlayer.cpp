@@ -2,7 +2,7 @@
 
 PlayerConstructor(WASDPlayer)
 {
-
+	selectCell = { 0, 0 };
 }
 
 PlayerInput(WASDPlayer)
@@ -38,4 +38,9 @@ void WASDPlayer::Draw()
 void WASDPlayer::Sound()
 {
 
+}
+
+Int2 WASDPlayer::GetSelectCell()
+{
+	return selectCell;
 }

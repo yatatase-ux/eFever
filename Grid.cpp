@@ -2,7 +2,8 @@
 #include "DxLib.h"
 #include "Function.h"
 
-Grid::Grid()
+Grid::Grid(KeyAction* arg_key)
+	:key(arg_key)
 {
 	gridPos = { WINDOW_WF / 2.0f, WINDOW_HF / 2.0f };
 	gridSize = { 500.0f, 500.0f };
@@ -29,11 +30,20 @@ Grid::Grid()
 			cells[h][w] = Cell(cellPos);
 		}
 	}
+
+	selectCell = { 0, 0 };
+
+	player = std::make_unique<DPadPlayer>(key);
+}
+
+void Grid::Input()
+{
+	player->Input();
 }
 
 void Grid::Update()
 {
-
+	player->Update();
 }
 
 void Grid::Draw()
@@ -58,5 +68,8 @@ void Grid::Draw()
 			cells[h][w].Draw();
 		}
 	}
+
+	Float2 selectPos = cells[selectCell.y][selectCell.x].GetPos();
+	DrawCenterBox(selectPos, { gridSize.x / 3.0f, gridSize.y / 3.0f }, GetColor(255, 255, 0), FALSE, 5.0f);
 	
 }

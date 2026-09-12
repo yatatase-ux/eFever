@@ -135,6 +135,7 @@
     <ClCompile Include="Function.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Grid.cpp" />
+    <ClCompile Include="Int2.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="PlayerBase.cpp" />
     <ClCompile Include="SceneManager.cpp" />
@@ -151,6 +152,7 @@
     <ClInclude Include="Function.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Grid.h" />
+    <ClInclude Include="Int2.h" />
     <ClInclude Include="KeyAction.h" />
     <ClInclude Include="PlayerBase.h" />
     <ClInclude Include="SceneBase.h" />

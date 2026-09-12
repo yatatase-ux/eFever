@@ -19,6 +19,12 @@
     <Filter Include="ソース ファイル\Scene">
       <UniqueIdentifier>{f7fb21bf-7274-4969-823e-4ff0c78bf5fc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Player">
+      <UniqueIdentifier>{fbdd3b2b-e3cf-4e9e-b0df-d62b28d959c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Player">
+      <UniqueIdentifier>{6d131c0a-255f-44e7-9aa5-aa582445f4fa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -46,6 +52,12 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="DPadPlayer.cpp">
+      <Filter>ソース ファイル\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Cell.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Grid.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="SP.cpp">
@@ -84,6 +96,12 @@
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="DPadPlayer.h">
+      <Filter>ヘッダー ファイル\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Cell.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Grid.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="SP.h">

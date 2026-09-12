@@ -10,7 +10,7 @@ enum {
 	DOWN,
 	RIGHT,
 	LEFT,
-
+	ONE,
 	USE_KEY_MAX
 };
 
@@ -22,7 +22,10 @@ protected:
 	{
 		KEY_INPUT_SPACE,
 		KEY_INPUT_UP,
-		KEY_INPUT_DOWN
+		KEY_INPUT_DOWN,
+		KEY_INPUT_RIGHT,
+		KEY_INPUT_LEFT,
+		KEY_INPUT_1
 	};
 
 	bool key_sw[USE_KEY_MAX] = { false,false,false };

@@ -4,9 +4,12 @@
 #include "Function.h"
 #include "WindowSize.h"
 
+#include "Grid.h"
+
 class ScenePlay : public SceneBase
 {
 private:
+	Grid grid;
 
 	Float2 gridPos;
 	Float2 gridSize;

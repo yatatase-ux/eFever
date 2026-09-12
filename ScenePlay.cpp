@@ -25,21 +25,14 @@ sInput(ScenePlay)
 
 sUpdate(ScenePlay)
 {
-
+	grid.Update();
 }
 
 sDraw(ScenePlay)
 {
-	DrawCenterBox(gridPos, gridSize, GetColor(0, 128, 0), TRUE);
 
-	Float2 sPos = gridPos - gridSize / 2.0f;
-	Float2 ePos = sPos + gridSize;
-	float n = gridSize.x / 3.0f;
-	for (int i = 0; i < 4; i++)
-	{
-		DrawLineAA(sPos.x + i * n, sPos.y, sPos.x + i * n, ePos.y, GetColor(0,0,0), 5.0f);
-		DrawLineAA(sPos.x, sPos.y + i * n, ePos.x, sPos.y + i * n, GetColor(0,0,0), 5.0f);
-	}
+	grid.Draw();rawLineAA(sPos.x, sPos.y + i * n, ePos.x, sPos.y + i * n, GetColor(0,0,0), 5.0f);
+	//}
 	DrawGraph(558, 440, maru_image, TRUE);
 	DrawGraph(558-166, 440, batu_image, TRUE);
 }

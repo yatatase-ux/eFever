@@ -138,6 +138,7 @@
     <ClCompile Include="SceneOP.cpp" />
     <ClCompile Include="ScenePlay.cpp" />
     <ClCompile Include="SceneResult.cpp" />
+    <ClCompile Include="SP.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DPadPlayer.h" />
@@ -150,6 +151,7 @@
     <ClInclude Include="SceneOP.h" />
     <ClInclude Include="ScenePlay.h" />
     <ClInclude Include="SceneResult.h" />
+    <ClInclude Include="SP.h" />
     <ClInclude Include="WindowSize.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

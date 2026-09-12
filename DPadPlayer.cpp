@@ -1,12 +1,11 @@
 #include "DPadPlayer.h"
 
-DPadPlayer::DPadPlayer(KeyAction* arg_key)
-	: key(arg_key)
+PlayerConstructor(DPadPlayer)
 {
 	
 }
 
-void DPadPlayer::Input()
+PlayerInput(DPadPlayer)
 {
 	if (key->Push(UP))
 	{
@@ -26,7 +25,7 @@ void DPadPlayer::Input()
 	}
 }
 
-void DPadPlayer::Update()
+PlayerUpdate(DPadPlayer)
 {
 
 }

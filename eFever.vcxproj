@@ -136,12 +136,14 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Grid.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="PlayerBase.cpp" />
     <ClCompile Include="PreAlert .cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="SceneOP.cpp" />
     <ClCompile Include="ScenePlay.cpp" />
     <ClCompile Include="SceneResult.cpp" />
     <ClCompile Include="SP.cpp" />
+    <ClCompile Include="WASDPlayer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cell.h" />
@@ -151,6 +153,7 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="Grid.h" />
     <ClInclude Include="KeyAction.h" />
+    <ClInclude Include="PlayerBase.h" />
     <ClInclude Include="PreAlert .h" />
     <ClInclude Include="SceneBase.h" />
     <ClInclude Include="SceneManager.h" />
@@ -158,6 +161,7 @@
     <ClInclude Include="ScenePlay.h" />
     <ClInclude Include="SceneResult.h" />
     <ClInclude Include="SP.h" />
+    <ClInclude Include="WASDPlayer.h" />
     <ClInclude Include="WindowSize.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

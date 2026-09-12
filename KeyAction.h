@@ -5,12 +5,21 @@
 // ÉLÅ[ì¸óÕ
 // ====================================================================
 enum {
-	SPACE,
+	// DPadPlayer
+	ENTER,
 	UP,
 	DOWN,
 	RIGHT,
 	LEFT,
+	// WASDPlayer
+	SPACE,
+	W,
+	A,
+	S,
+	D,
+
 	ONE,
+
 	USE_KEY_MAX
 };
 
@@ -20,15 +29,22 @@ protected:
 
 	int key_type[USE_KEY_MAX] =
 	{
-		KEY_INPUT_SPACE,
+		KEY_INPUT_RETURN,
 		KEY_INPUT_UP,
 		KEY_INPUT_DOWN,
 		KEY_INPUT_RIGHT,
 		KEY_INPUT_LEFT,
+
+		KEY_INPUT_SPACE,
+		KEY_INPUT_W,
+		KEY_INPUT_A,
+		KEY_INPUT_S,
+		KEY_INPUT_D,
+
 		KEY_INPUT_1
 	};
 
-	bool key_sw[USE_KEY_MAX] = { false,false,false };
+	bool key_sw[USE_KEY_MAX] = { false };
 
 public:
 
@@ -94,7 +110,7 @@ protected:
 		MOUSE_INPUT_RIGHT
 	};
 
-	bool mouse_sw[MOUSE_KEY_MAX] = { false, false };
+	bool mouse_sw[MOUSE_KEY_MAX] = { false };
 
 public:
 

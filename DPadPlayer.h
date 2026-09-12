@@ -1,20 +1,14 @@
 #pragma once
 #include "KeyAction.h"
+#include "PlayerBase.h"
 
-class DPadPlayer
+class DPadPlayer : public PlayerBase
 {
 private:
 
-	KeyAction* key;
-
 public:
 
-	DPadPlayer(KeyAction* arg_key);
-
-	void Input();
-	void Update();
-	void Draw();
-	void Sound();
+	PlayerClass(DPadPlayer);
 
 };
 

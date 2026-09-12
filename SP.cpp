@@ -10,14 +10,27 @@ void SP::Init()
 
 void SP::SetMovieFlag(bool flag)
 {
-	movie_flag = true;
+	movie_flag = flag;
+
+	if (movie_flag)
+	{
+		// “®‰æ‚ğÅ‰‚É–ß‚·
+		SeekMovieToGraph(puchun, 0);
+
+		PlayMovieToGraph(puchun);
+	}
 }
 
 void SP::Update()
 {
 	if (movie_flag)
 	{
-		PlayMovieToGraph(puchun);
+		int state = GetMovieStateToGraph(puchun);
+
+		if (state <= 0)
+		{
+			movie_flag = false;
+		}
 	}
 }
 

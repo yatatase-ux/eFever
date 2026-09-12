@@ -7,19 +7,19 @@ PlayerConstructor(WASDPlayer)
 
 PlayerInput(WASDPlayer)
 {
-	if (key->Push(UP))
+	if (key->Push(W))
 	{
 
 	}
-	else if (key->Push(DOWN))
+	else if (key->Push(S))
 	{
 
 	}
-	else if (key->Push(RIGHT))
+	else if (key->Push(D))
 	{
 
 	}
-	else if (key->Push(LEFT))
+	else if (key->Push(A))
 	{
 
 	}

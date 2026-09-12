@@ -11,9 +11,6 @@ class ScenePlay : public SceneBase
 private:
 	Grid grid;
 
-	Float2 gridPos;
-	Float2 gridSize;
-
 	int maru_image;
 	int batu_image;
 	int hanten_image;

@@ -9,8 +9,6 @@ sCONSTRUCTOR(ScenePlay)
 	hantenkakutei_image = LoadGraph("image/hantenkakutei.png");
 	puchun_image = LoadGraph("image/puchun.jpg");
 
-	gridPos = { WINDOW_WF / 2.0f, WINDOW_HF / 2.0f };
-	gridSize = { 500.0f, 500.0f };
 }
 
 sInput(ScenePlay)

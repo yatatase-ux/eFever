@@ -50,6 +50,7 @@ void Grid::Draw()
 		DrawLineAA(sPos.x, sPos.y + i * n, ePos.x, sPos.y + i * n, GetColor(0, 0, 0), 5.0f);
 	}
 
+	// ƒ}ƒ‹‚Æƒoƒc‚Ì•`‰æ
 	for (int h = 0; h < 3; h++)
 	{
 		for (int w = 0; w < 3; w++)

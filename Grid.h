@@ -6,9 +6,7 @@
 #include "WindowSize.h"
 #include "KeyAction.h"
 
-#include "PlayerBase.h"
-#include "DPadPlayer.h"
-#include "WASDPlayer.h"
+#include "TurnManager.h"
 
 class Grid
 {
@@ -20,7 +18,7 @@ private:
 
 	Int2 selectCell;
 
-	std::unique_ptr<PlayerBase> player;
+	std::unique_ptr<TurnManager> TM;
 
 	KeyAction* key;
 

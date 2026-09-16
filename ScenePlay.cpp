@@ -16,10 +16,10 @@ grid{Grid(key)}
 
 sInput(ScenePlay)
 {
-	if (key->Push(SPACE))
-	{
-		return SceneState::Result;
-	}
+	//if (key->Push(SPACE))
+	//{
+	//	return SceneState::Result;
+	//}
 
 	if (key->Push(ONE))
 	{

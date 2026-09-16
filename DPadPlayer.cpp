@@ -27,6 +27,13 @@ PlayerInput(DPadPlayer)
 		selectCell.x--;
 		if (selectCell.x < 0) selectCell.x = 0;
 	}
+
+	if (key->Push(ENTER))
+	{
+		return true;
+	}
+
+	return false;
 }
 
 PlayerUpdate(DPadPlayer)

@@ -33,19 +33,19 @@ Grid::Grid(KeyAction* arg_key)
 
 	selectCell = { 0, 0 };
 
-	player = std::make_unique<DPadPlayer>(key);
+	TM = std::make_unique<TurnManager>(key);
 }
 
 void Grid::Input()
 {
-	player->Input();
+	TM->Input();
 }
 
 void Grid::Update()
 {
-	player->Update();
+	TM->Update();
 
-	selectCell = player->GetSelectCell();
+	selectCell = TM->GetSelectCell();
 }
 
 void Grid::Draw()

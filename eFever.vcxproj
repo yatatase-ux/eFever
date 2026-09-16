@@ -144,6 +144,7 @@
     <ClCompile Include="ScenePlay.cpp" />
     <ClCompile Include="SceneResult.cpp" />
     <ClCompile Include="SP.cpp" />
+    <ClCompile Include="TurnManager.cpp" />
     <ClCompile Include="WASDPlayer.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -163,6 +164,7 @@
     <ClInclude Include="ScenePlay.h" />
     <ClInclude Include="SceneResult.h" />
     <ClInclude Include="SP.h" />
+    <ClInclude Include="TurnManager.h" />
     <ClInclude Include="WASDPlayer.h" />
     <ClInclude Include="WindowSize.h" />
   </ItemGroup>

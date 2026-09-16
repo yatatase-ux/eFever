@@ -27,6 +27,13 @@ PlayerInput(WASDPlayer)
 		selectCell.x--;
 		if (selectCell.x < 0) selectCell.x = 0;
 	}
+
+	if (key->Push(SPACE))
+	{
+		return true;
+	}
+
+	return false;
 }
 
 PlayerUpdate(WASDPlayer)

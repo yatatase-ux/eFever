@@ -1,7 +1,7 @@
 #include "ScenePlay.h"
 
 sCONSTRUCTOR(ScenePlay),
-grid{Grid(key)}
+TM{TurnManager(key)}
 {
 	Cell::ImageLoad();
 
@@ -16,32 +16,32 @@ grid{Grid(key)}
 
 sInput(ScenePlay)
 {
-	//if (key->Push(SPACE))
-	//{
-	//	return SceneState::Result;
-	//}
-
 	if (key->Push(ONE))
 	{
 		sp.SetMovieFlag(true);
 	}
 
-	grid.Input();
+	TM.Input();
 
 	return SceneState::None;
 }
 
 sUpdate(ScenePlay)
 {
-	grid.Update();
+	bool GoNextScene = TM.Update();
+	if (GoNextScene)
+	{
+		return SceneState::Result;
+	}
 
 	sp.Update();
+
+	return SceneState::None;
 }
 
 sDraw(ScenePlay)
 {
-	grid.Draw();
-
+	TM.Draw();
 	sp.Draw();
 }
 

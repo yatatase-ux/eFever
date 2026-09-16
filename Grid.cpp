@@ -2,8 +2,7 @@
 #include "DxLib.h"
 #include "Function.h"
 
-Grid::Grid(KeyAction* arg_key)
-	:key(arg_key)
+Grid::Grid()
 {
 	gridPos = { WINDOW_WF / 2.0f, WINDOW_HF / 2.0f };
 	gridSize = { 500.0f, 500.0f };
@@ -31,24 +30,32 @@ Grid::Grid(KeyAction* arg_key)
 		}
 	}
 
-	selectCell = { 0, 0 };
-
-	TM = std::make_unique<TurnManager>(key);
 }
 
 void Grid::Input()
 {
-	TM->Input();
+
 }
 
-void Grid::Update()
+bool Grid::Update()
 {
-	TM->Update();
+	int CheckFill = 0;
 
-	selectCell = TM->GetSelectCell();
+	for (int h = 0; h < 3; h++)
+	{
+		for (int w = 0; w < 3; w++)
+		{
+			if (cells[h][w].CheckNoMark())
+			{
+				CheckFill++;
+			}
+		}
+	}
+
+	return (CheckFill >= 9);
 }
 
-void Grid::Draw()
+void Grid::Draw(Int2 selectCell)
 {
 	// 緑の盤
 	DrawCenterBox(gridPos, gridSize, GetColor(0, 128, 0), TRUE);
@@ -71,7 +78,21 @@ void Grid::Draw()
 		}
 	}
 
+	// 選択しているマスの描画
 	Float2 selectPos = cells[selectCell.y][selectCell.x].GetPos();
 	DrawCenterBox(selectPos, { gridSize.x / 3.0f, gridSize.y / 3.0f }, GetColor(255, 255, 0), FALSE, 5.0f);
 	
+}
+
+bool Grid::SetMark(Turn now, Int2 selectCell)
+{
+	// もし選択したマスに何か置かれていたらTRUE返す
+	if (cells[selectCell.y][selectCell.x].CheckNoMark()) return true;
+
+
+	Mark setMark = (now == Turn::Dpad) ? Mark::Circle : Mark::Cross;
+
+	cells[selectCell.y][selectCell.x].SetMark(setMark);
+
+	return false;
 }

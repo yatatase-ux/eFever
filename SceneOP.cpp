@@ -29,7 +29,7 @@ sInput(SceneOP)
 
 sUpdate(SceneOP)
 {
-
+	return SceneState::None;
 }
 
 sDraw(SceneOP)

@@ -3,30 +3,30 @@
 #include "DPadPlayer.h"
 #include "WASDPlayer.h"
 #include <memory>
-
 #include "KeyAction.h"
+#include "Grid.h"
+#include "Int2.h"
+#include "TurnEnum.h"
 
-enum class Turn
-{
-	Dpad,
-	WASD
-};
 
 class TurnManager
 {
 private:
+	KeyAction* key;
 
 	std::unique_ptr<PlayerBase> player;
 	Turn nowTurn;
 
-	KeyAction* key;
+	Grid grid;
+
+	Int2 selectCell;
 
 public:
 
 	TurnManager(KeyAction* arg_key);
 
 	void Input();
-	void Update();
+	bool Update();
 	void Draw();
 
 	Int2 GetSelectCell();

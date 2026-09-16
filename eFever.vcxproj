@@ -164,6 +164,7 @@
     <ClInclude Include="ScenePlay.h" />
     <ClInclude Include="SceneResult.h" />
     <ClInclude Include="SP.h" />
+    <ClInclude Include="TurnEnum.h" />
     <ClInclude Include="TurnManager.h" />
     <ClInclude Include="WASDPlayer.h" />
     <ClInclude Include="WindowSize.h" />

@@ -21,7 +21,7 @@ public:
 	virtual ~SceneBase() {};
 
 	virtual SceneState Input() = 0;
-	virtual void Update() = 0;
+	virtual SceneState Update() = 0;
 	virtual void Draw() = 0;
 	virtual void Sound() = 0;
 
@@ -33,7 +33,7 @@ public:
 #define SCENECLASS(className)\
 	className(KeyAction* arg_key);\
 	SceneState Input()override;\
-	void Update()override;\
+	SceneState Update()override;\
 	void Draw()override;\
 	void Sound()override;
 
@@ -45,7 +45,7 @@ className::className(KeyAction* arg_key)\
 SceneState className::Input()
 
 #define sUpdate(className)\
-void className::Update()
+SceneState className::Update()
 
 #define sDraw(className)\
 void className::Draw()

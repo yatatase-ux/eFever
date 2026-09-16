@@ -28,5 +28,12 @@ public:
 	void Draw();
 
 	Float2 GetPos() { return pos; };
+
+	void SetMark(Mark set);
+	/// <summary>
+	/// セルのマークがNoneでなければTrueを返す関数
+	/// </summary>
+	/// <returns></returns>
+	bool CheckNoMark();
 };
 

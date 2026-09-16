@@ -27,3 +27,12 @@ void Cell::Draw()
 {
 	DrawRotaGraphF(pos.x, pos.y, 1.0f, 0.0f, markImage[static_cast<int>(mark)], TRUE);
 }
+
+void Cell::SetMark(Mark set)
+{
+	mark = set;
+}
+bool Cell::CheckNoMark()
+{
+	return (mark != Mark::None);
+}

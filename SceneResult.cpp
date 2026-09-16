@@ -30,7 +30,7 @@ sInput(SceneResult)
 
 sUpdate(SceneResult)
 {
-
+	return SceneState::None;
 }
 
 sDraw(SceneResult)

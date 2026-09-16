@@ -5,8 +5,7 @@
 #include "Cell.h"
 #include "WindowSize.h"
 #include "KeyAction.h"
-
-#include "TurnManager.h"
+#include "TurnEnum.h"
 
 class Grid
 {
@@ -16,18 +15,13 @@ private:
 
 	Cell cells[3][3];
 
-	Int2 selectCell;
-
-	std::unique_ptr<TurnManager> TM;
-
-	KeyAction* key;
-
 public:
 
-	Grid(KeyAction* arg_key);
+	Grid();
 
 	void Input();
-	void Update();
-	void Draw();
+	bool Update();
+	void Draw(Int2 selectCell);
 
+	bool SetMark(Turn now, Int2 selectCell);
 };

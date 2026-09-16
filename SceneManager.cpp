@@ -13,7 +13,8 @@ void SceneManager::Input()
 
 void SceneManager::Update()
 {
-	 scene->Update();
+	SceneState next = scene->Update();
+	SceneChange(next);
 }
 
 void SceneManager::Draw()

@@ -9,6 +9,8 @@ protected:
 
 	Int2 selectCell;
 
+	int image;
+
 public:
 	PlayerBase(KeyAction* arg_key)
 	:key(arg_key){};

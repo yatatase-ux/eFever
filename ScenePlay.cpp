@@ -21,7 +21,8 @@ sInput(ScenePlay)
 		sp.SetMovieFlag(true);
 	}
 
-	TM.Input();
+	bool GoResult = TM.Input();
+	if(GoResult)	return SceneState::Result;
 
 	return SceneState::None;
 }
@@ -29,10 +30,7 @@ sInput(ScenePlay)
 sUpdate(ScenePlay)
 {
 	bool GoNextScene = TM.Update();
-	if (GoNextScene)
-	{
-		return SceneState::Result;
-	}
+	if (GoNextScene)	return SceneState::Result;	
 
 	sp.Update();
 

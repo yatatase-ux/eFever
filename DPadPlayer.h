@@ -9,6 +9,7 @@ private:
 public:
 
 	PlayerClass(DPadPlayer);
+	~DPadPlayer();
 
 };
 

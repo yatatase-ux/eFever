@@ -28,7 +28,7 @@ public:
 
 	TurnManager(KeyAction* arg_key);
 
-	void Input();
+	bool Input();
 	bool Update();
 	void Draw();
 

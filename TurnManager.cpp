@@ -11,14 +11,29 @@ TurnManager::TurnManager(KeyAction* arg_key)
 	selectCell = { 0, 0 };
 }
 
-void TurnManager::Input()
+bool TurnManager::Input()
 {
 	bool turnChange = player->Input();
 
 	if (turnChange)
 	{
+		bool placeFailed = grid.SetMark(nowTurn, selectCell);
+
+		if (placeFailed)
+		{
+			return false;
+		}
+
+		Mark winner;
+		GameState result = winChecker.CheckFinish(winner);
+		if (result != GameState::InProgress)
+		{
+			return true;
+		}
+
 		ChangeTurn();
 	}
+	return false;
 }
 
 bool TurnManager::Update()
@@ -26,9 +41,9 @@ bool TurnManager::Update()
 	player->Update();
 	selectCell = player->GetSelectCell();
 
-	bool finishGame = winChecker.CheckFinish();
+//	bool finishGame = winChecker.CheckFinish();
 
-	return finishGame;
+	return false;
 }
 
 void TurnManager::Draw()
@@ -44,10 +59,6 @@ Int2 TurnManager::GetSelectCell()
 
 void TurnManager::ChangeTurn()
 {
-	bool CheckNoMark = grid.SetMark(nowTurn, selectCell);
-
-	if (CheckNoMark) return;
-
 	if (nowTurn == Turn::Dpad)
 	{
 		player = std::make_unique<WASDPlayer>(key);

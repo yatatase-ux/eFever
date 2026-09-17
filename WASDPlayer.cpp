@@ -1,8 +1,10 @@
 #include "WASDPlayer.h"
+#include "Function.h"
 
 PlayerConstructor(WASDPlayer)
 {
 	selectCell = { 0, 0 };
+	image = LoadGraph("image/batu.png");
 }
 
 PlayerInput(WASDPlayer)
@@ -43,7 +45,8 @@ PlayerUpdate(WASDPlayer)
 
 void WASDPlayer::Draw()
 {
-
+	DrawRotaGraph(180, 200, 1.0, 0.0, image, TRUE);
+	DrawCenterText(180.0f, 300.0f, "ÇÃÉ^Å[Éì", GetColor(255, 255, 0), 30);
 }
 
 void WASDPlayer::Sound()

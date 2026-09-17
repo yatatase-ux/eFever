@@ -1,8 +1,15 @@
 #include "DPadPlayer.h"
+#include "Function.h"
 
 PlayerConstructor(DPadPlayer)
 {
 	selectCell = { 0, 0 };
+	image = LoadGraph("image/maru.png");
+}
+
+DPadPlayer::~DPadPlayer()
+{
+	DeleteGraph(image);
 }
 
 PlayerInput(DPadPlayer)
@@ -43,7 +50,8 @@ PlayerUpdate(DPadPlayer)
 
 void DPadPlayer::Draw()
 {
-
+	DrawRotaGraph(1100, 200, 1.0, 0.0, image, TRUE);
+	DrawCenterText(1100.0f, 300.0f, "ÇÃÉ^Å[Éì", GetColor(255, 255, 0), 30);
 }
 
 void DPadPlayer::Sound()

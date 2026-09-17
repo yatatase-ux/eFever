@@ -30,6 +30,7 @@ public:
 	Float2 GetPos() { return pos; };
 
 	void SetMark(Mark set);
+	Mark GetMark() { return mark; };
 	/// <summary>
 	/// セルのマークがNoneでなければTrueを返す関数
 	/// </summary>

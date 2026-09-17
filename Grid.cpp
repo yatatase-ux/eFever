@@ -39,20 +39,7 @@ void Grid::Input()
 
 bool Grid::Update()
 {
-	int CheckFill = 0;
-
-	for (int h = 0; h < 3; h++)
-	{
-		for (int w = 0; w < 3; w++)
-		{
-			if (cells[h][w].CheckNoMark())
-			{
-				CheckFill++;
-			}
-		}
-	}
-
-	return (CheckFill >= 9);
+	return false;
 }
 
 void Grid::Draw(Int2 selectCell)

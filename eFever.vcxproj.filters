@@ -31,6 +31,12 @@
     <Filter Include="ヘッダー ファイル\Main">
       <UniqueIdentifier>{84d713e6-fd91-4329-a32f-745870bf1e49}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ヘッダー ファイル\Board">
+      <UniqueIdentifier>{15f5e5d1-c4b7-4710-b66f-b5bd4edc66ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Board">
+      <UniqueIdentifier>{fdf0aa24-7f92-49f2-a9dd-d9c0006578f5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SceneManager.cpp">
@@ -47,12 +53,6 @@
     </ClCompile>
     <ClCompile Include="DPadPlayer.cpp">
       <Filter>ソース ファイル\Player</Filter>
-    </ClCompile>
-    <ClCompile Include="Cell.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Grid.cpp">
-      <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="SP.cpp">
       <Filter>ソース ファイル</Filter>
@@ -84,11 +84,17 @@
     <ClCompile Include="TurnManager.cpp">
       <Filter>ソース ファイル\Player</Filter>
     </ClCompile>
+    <ClCompile Include="Cell.cpp">
+      <Filter>ソース ファイル\Board</Filter>
+    </ClCompile>
+    <ClCompile Include="Grid.cpp">
+      <Filter>ソース ファイル\Board</Filter>
+    </ClCompile>
+    <ClCompile Include="WinChecker.cpp">
+      <Filter>ソース ファイル\Board</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Game.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="SceneBase.h">
       <Filter>ヘッダー ファイル\Scene</Filter>
     </ClInclude>
@@ -104,17 +110,8 @@
     <ClInclude Include="ScenePlay.h">
       <Filter>ヘッダー ファイル\Scene</Filter>
     </ClInclude>
-    <ClInclude Include="Function.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="DPadPlayer.h">
       <Filter>ヘッダー ファイル\Player</Filter>
-    </ClInclude>
-    <ClInclude Include="Cell.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Grid.h">
-      <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="SP.h">
       <Filter>ヘッダー ファイル</Filter>
@@ -143,8 +140,23 @@
     <ClInclude Include="TurnManager.h">
       <Filter>ヘッダー ファイル\Player</Filter>
     </ClInclude>
+    <ClInclude Include="Grid.h">
+      <Filter>ヘッダー ファイル\Board</Filter>
+    </ClInclude>
+    <ClInclude Include="Cell.h">
+      <Filter>ヘッダー ファイル\Board</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>ヘッダー ファイル\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Function.h">
+      <Filter>ヘッダー ファイル\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="WinChecker.h">
+      <Filter>ヘッダー ファイル\Board</Filter>
+    </ClInclude>
     <ClInclude Include="TurnEnum.h">
-      <Filter>ヘッダー ファイル</Filter>
+      <Filter>ヘッダー ファイル\Player</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,7 +1,8 @@
 #include "TurnManager.h"
 
 TurnManager::TurnManager(KeyAction* arg_key)
-	:key(arg_key)
+	:key(arg_key),
+	winChecker(grid)
 {
 	player = std::make_unique<DPadPlayer>(key);
 
@@ -25,7 +26,7 @@ bool TurnManager::Update()
 	player->Update();
 	selectCell = player->GetSelectCell();
 
-	bool finishGame = grid.Update();
+	bool finishGame = winChecker.CheckFinish();
 
 	return finishGame;
 }

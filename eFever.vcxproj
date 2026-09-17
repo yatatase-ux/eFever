@@ -146,6 +146,7 @@
     <ClCompile Include="SP.cpp" />
     <ClCompile Include="TurnManager.cpp" />
     <ClCompile Include="WASDPlayer.cpp" />
+    <ClCompile Include="WinChecker.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cell.h" />
@@ -167,6 +168,7 @@
     <ClInclude Include="TurnEnum.h" />
     <ClInclude Include="TurnManager.h" />
     <ClInclude Include="WASDPlayer.h" />
+    <ClInclude Include="WinChecker.h" />
     <ClInclude Include="WindowSize.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

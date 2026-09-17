@@ -30,11 +30,17 @@ public:
 	Float2 GetPos() { return pos; };
 
 	void SetMark(Mark set);
-	Mark GetMark() { return mark; };
+
+	/// <summary>
+	/// マークのゲッター関数　
+	/// </summary>
+	/// <returns>マーク</returns>
+	Mark GetMark() const { return mark; };
+
 	/// <summary>
 	/// セルのマークがNoneでなければTrueを返す関数
 	/// </summary>
 	/// <returns></returns>
-	bool CheckNoMark();
+	bool CheckHasMark();
 };
 

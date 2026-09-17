@@ -2,7 +2,7 @@
 
 TurnManager::TurnManager(KeyAction* arg_key)
 	:key(arg_key),
-	winChecker(grid)
+	winChecker(&grid)
 {
 	player = std::make_unique<DPadPlayer>(key);
 

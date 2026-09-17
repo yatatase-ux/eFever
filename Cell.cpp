@@ -32,7 +32,7 @@ void Cell::SetMark(Mark set)
 {
 	mark = set;
 }
-bool Cell::CheckNoMark()
+bool Cell::CheckHasMark()
 {
 	return (mark != Mark::None);
 }

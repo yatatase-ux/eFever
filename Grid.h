@@ -37,5 +37,13 @@ public:
 	/// <param name="row"></param>
 	/// <param name="col"></param>
 	/// <returns></returns>
-	bool CheckCellMark(int row, int col) { return cells[row][col].CheckNoMark(); };
+	bool CheckCellMark(int row, int col) { return cells[row][col].CheckHasMark(); };
+
+	/// <summary>
+	/// 指定したセルのマークを取得するゲッター関数
+	/// </summary>
+	/// <param name="row">1つ目の添字</param>
+	/// <param name="col">2つ目の添字</param>
+	/// <returns>指定したセルのマーク</returns>
+	Mark GetCellMark(int row, int col) const { return cells[row][col].GetMark(); };
 };

@@ -74,7 +74,7 @@ void Grid::Draw(Int2 selectCell)
 bool Grid::SetMark(Turn now, Int2 selectCell)
 {
 	// もし選択したマスに何か置かれていたらTRUE返す
-	if (cells[selectCell.y][selectCell.x].CheckNoMark()) return true;
+	if (cells[selectCell.y][selectCell.x].CheckHasMark()) return true;
 
 
 	Mark setMark = (now == Turn::Dpad) ? Mark::Circle : Mark::Cross;

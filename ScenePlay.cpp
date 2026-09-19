@@ -17,6 +17,9 @@ TM{TurnManager(key)}
 
 	BG = LoadGraph("image/play_bg.png");
 
+	circleImage = LoadGraph("image/maru.png");
+	crossImage = LoadGraph("image/batu.png");
+
 	stage = PlayStage::InGame;
 
 }
@@ -28,6 +31,8 @@ ScenePlay::~ScenePlay()
 	DeleteGraph(hantenkakutei_image);
 	DeleteGraph(puchun_image);
 	DeleteGraph(BG);
+	DeleteGraph(circleImage);
+	DeleteGraph(crossImage);
 }
 
 sInput(ScenePlay)
@@ -90,11 +95,13 @@ sDraw(ScenePlay)
 		switch (winner)
 		{
 		case Mark::Circle:
+			DrawRotaGraph(WINDOW_WF / 2.0f, WINDOW_HF / 2.0f, 3.0f, 0.0f, circleImage, TRUE);
 			DrawCenterText(WINDOW_WF / 2.0f, WINDOW_HF / 2.0f, "十字キープレイヤーの勝利！！",
 				GetColor(255, 255, 0), 75.0f);
 			break;
 
 		case Mark::Cross:
+			DrawRotaGraph(WINDOW_WF / 2.0f, WINDOW_HF / 2.0f, 3.0f, 0.0f, crossImage, TRUE);
 			DrawCenterText(WINDOW_WF / 2.0f, WINDOW_HF / 2.0f, "WASDプレイヤーの勝利！！",
 				GetColor(255, 255, 0), 75.0f);
 			break;

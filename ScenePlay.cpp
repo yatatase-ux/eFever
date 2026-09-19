@@ -13,7 +13,7 @@ TM{TurnManager(key)}
 	hantenkakutei_image = LoadGraph("image/hantenkakutei.png");
 	puchun_image = LoadGraph("image/puchun.jpg");
 
-	BG = LoadGraph("image/bg.png");
+	BG = LoadGraph("image/play_bg.png");
 
 }
 

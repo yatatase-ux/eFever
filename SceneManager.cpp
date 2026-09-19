@@ -46,10 +46,6 @@ void SceneManager::SceneChange(SceneState nextScene)
 		scene = std::make_unique<ScenePlay>(&key);
 		break;
 
-	case SceneState::Result:
-		scene = std::make_unique<SceneResult>(&key);
-		break;
-
 	case SceneState::End:
 		scene = std::make_unique<SceneEnd>(&key);
 		break;

@@ -24,6 +24,8 @@ private:
 
 	WinChecker winChecker;
 
+	Mark winner;
+
 public:
 
 	TurnManager(KeyAction* arg_key);
@@ -35,5 +37,7 @@ public:
 	Int2 GetSelectCell();
 
 	void ChangeTurn();
+
+	Mark GetWinner() { return winner; };
 };
 

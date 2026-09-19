@@ -24,7 +24,6 @@ bool TurnManager::Input()
 			return false;
 		}
 
-		Mark winner;
 		GameState result = winChecker.CheckFinish(winner);
 		if (result != GameState::InProgress)
 		{

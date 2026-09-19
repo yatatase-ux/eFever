@@ -7,6 +7,13 @@
 #include "Cell.h"
 #include "TurnManager.h"
 #include "PreAlert.h"
+
+enum class PlayStage
+{
+	InGame,
+	Result
+};
+
 class ScenePlay : public SceneBase
 {
 private:
@@ -17,9 +24,16 @@ private:
 	int hantenkakutei_image;
 	int puchun_image;
 
+	int circleImage;
+	int crossImage;
+
 	int BG;
 
 	TurnManager TM;
+
+	PlayStage stage;
+
+	Mark winner;
 
 public:
 

@@ -44,10 +44,8 @@ sInput(ScenePlay)
 
 		if (key->Push(ONE))
 		{
-			if (pre.Lottery())
-			{
-				sp.SetMovieFlag(true);
-			}
+			pre.Start();
+			
 		}
 
 		bool GoResult = TM.Input();
@@ -75,7 +73,21 @@ sUpdate(ScenePlay)
 
 	sp.Update();
 
+	pre.Update();
+
+	if (pre.End())
+	{
+		if (pre.Lottery())
+		{
+			sp.SetMovieFlag(true);
+			pre.Reset();
+		}
+
+	}
+
 	return SceneState::None;
+
+
 }
 
 sDraw(ScenePlay)
@@ -83,7 +95,7 @@ sDraw(ScenePlay)
 	DrawExtendGraph(0, 0, WINDOW_WI, WINDOW_HI, BG, FALSE);
 	TM.Draw();
 	sp.Draw();
-
+	pre.Draw();
 	if (stage == PlayStage::Result)
 	{
 		// 半透明(0：完全透明　～　255：完全不透明)

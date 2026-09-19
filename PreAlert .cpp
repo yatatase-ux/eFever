@@ -5,13 +5,14 @@ void PreAlert::Init()
 {
     pre = 20;
     pre_img = LoadGraph("image/pre.png");
+    pre_posy = -900;
 }
 
 void PreAlert::Start()
 {
     active = true;
     end = false;
-    pre_posy = -300;
+    pre_posy = -900;
 }
 
 
@@ -25,8 +26,8 @@ bool PreAlert::Lottery()
 void PreAlert::Update()
 {
     if (!active) return;
-    pre_posy += 5;
-    if (pre_posy < 200)
+    pre_posy += 100;
+    if (pre_posy >= 200)
     {
         pre_posy = 200;
         active = false;
@@ -36,8 +37,17 @@ void PreAlert::Update()
 
 void PreAlert::Draw()
 {
-    DrawGraph(1280 / 2, pre_posy, pre_img, FALSE);
+    DrawGraph(100, pre_posy, pre_img, TRUE);
 }
+
+void PreAlert::Reset()
+{
+    active = false;
+    end = false;
+    pre_posy = -900;
+}
+
+
 bool PreAlert::End()
 {
     if (end)

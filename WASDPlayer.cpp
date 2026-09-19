@@ -4,12 +4,19 @@
 PlayerConstructor(WASDPlayer)
 {
 	selectCell = { 0, 0 };
-	image = LoadGraph("image/batu.png");
+	markImage = LoadGraph("image/batu.png");
+
+	keyImage = LoadGraph("image/WASD.png");
+	decideImage = LoadGraph("image/space.png");
+
+	UIpos_x = 180;
 }
 
 WASDPlayer::~WASDPlayer()
 {
-	DeleteGraph(image);
+	DeleteGraph(markImage);
+	DeleteGraph(keyImage);
+	DeleteGraph(decideImage);
 }
 
 PlayerInput(WASDPlayer)
@@ -50,8 +57,14 @@ PlayerUpdate(WASDPlayer)
 
 void WASDPlayer::Draw()
 {
-	DrawRotaGraph(180, 200, 1.0, 0.0, image, TRUE);
-	DrawCenterText(180.0f, 300.0f, "のターン", GetColor(255, 255, 0), 30);
+	DrawRotaGraphF(UIpos_x, 200.0f, 1.0, 0.0, markImage, TRUE);
+	DrawCenterText(UIpos_x, 300.0f, "のターン", GetColor(255, 255, 0), 30);
+
+	DrawRotaGraph(UIpos_x, 400.0f, 0.5, 0.0, keyImage, TRUE);
+	DrawCenterText(UIpos_x, 500.0f, "で操作", GetColor(255, 255, 0), 30);
+
+	DrawRotaGraph(UIpos_x, 580.0f, 0.4, 0.0, decideImage, TRUE);
+	DrawCenterText(UIpos_x, 680.0f, "で決定", GetColor(255, 255, 0), 30);
 }
 
 void WASDPlayer::Sound()

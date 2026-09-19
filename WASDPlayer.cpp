@@ -7,6 +7,11 @@ PlayerConstructor(WASDPlayer)
 	image = LoadGraph("image/batu.png");
 }
 
+WASDPlayer::~WASDPlayer()
+{
+	DeleteGraph(image);
+}
+
 PlayerInput(WASDPlayer)
 {
 	if (key->Push(W))

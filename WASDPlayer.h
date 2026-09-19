@@ -8,6 +8,6 @@ private:
 public:
 
 	PlayerClass(WASDPlayer);
-
+	~WASDPlayer();
 };
 

@@ -7,10 +7,8 @@ class SceneOP : public SceneBase
 private:
 	int BG_Image;
 
-	int arrow;
-	Float2 arrow_pos;
+	int count;
 
-	bool npc_mode;
 public:
 
 	SCENECLASS(SceneOP);

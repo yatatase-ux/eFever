@@ -12,6 +12,12 @@ sCONSTRUCTOR(SceneOP)
 
 }
 
+SceneOP::~SceneOP()
+{
+	DeleteGraph(BG_Image);
+	DeleteGraph(arrow);
+}
+
 sInput(SceneOP)
 {
 	if (key->Push(SPACE))

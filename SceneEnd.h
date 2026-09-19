@@ -14,6 +14,9 @@ private:
 
 	bool end_mode;
 
+	int highBG;
+	int lowBG;
+
 public:
 
 	SCENECLASS(SceneEnd);

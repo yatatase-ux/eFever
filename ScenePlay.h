@@ -30,6 +30,8 @@ private:
 
 	PlayStage stage;
 
+	Mark winner;
+
 public:
 
 	SCENECLASS(ScenePlay);

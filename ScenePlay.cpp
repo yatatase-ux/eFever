@@ -1,4 +1,6 @@
 #include "ScenePlay.h"
+#include "Function.h"
+#include "WindowSize.h"
 
 sCONSTRUCTOR(ScenePlay),
 TM{TurnManager(key)}
@@ -44,7 +46,11 @@ sInput(ScenePlay)
 		}
 
 		bool GoResult = TM.Input();
-		if (GoResult)	stage = PlayStage::Result;
+		if (GoResult)	
+		{
+			stage = PlayStage::Result;
+			winner = TM.GetWinner();
+		}
 
 		break;
 	}
@@ -80,6 +86,19 @@ sDraw(ScenePlay)
 		DrawFillBox(0, 0, WINDOW_WI, WINDOW_HI, GetColor(0, 0, 0));
 		// 元に戻す
 		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
+
+		switch (winner)
+		{
+		case Mark::Circle:
+			DrawCenterText(WINDOW_WF / 2.0f, WINDOW_HF / 2.0f, "十字キープレイヤーの勝利！！",
+				GetColor(255, 255, 0), 75.0f);
+			break;
+
+		case Mark::Cross:
+			DrawCenterText(WINDOW_WF / 2.0f, WINDOW_HF / 2.0f, "WASDプレイヤーの勝利！！",
+				GetColor(255, 255, 0), 75.0f);
+			break;
+		}
 	}
 }
 

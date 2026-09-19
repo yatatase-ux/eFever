@@ -12,6 +12,17 @@ TM{TurnManager(key)}
 	hantenkakutei_image = LoadGraph("image/hantenkakutei.png");
 	puchun_image = LoadGraph("image/puchun.jpg");
 
+	BG = LoadGraph("image/play_bg.png");
+
+}
+
+ScenePlay::~ScenePlay()
+{
+	DeleteGraph(hanten_image);
+	DeleteGraph(kakutei_image);
+	DeleteGraph(hantenkakutei_image);
+	DeleteGraph(puchun_image);
+	DeleteGraph(BG);
 }
 
 sInput(ScenePlay)
@@ -39,6 +50,7 @@ sUpdate(ScenePlay)
 
 sDraw(ScenePlay)
 {
+	DrawExtendGraph(0, 0, WINDOW_WI, WINDOW_HI, BG, TRUE);
 	TM.Draw();
 	sp.Draw();
 }

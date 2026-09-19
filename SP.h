@@ -12,8 +12,10 @@ private:
 	
 	bool movie_flag;
 
+
 public:
 
+	~SP();
 	void Init();
 	void Update();
 	void SetMovieFlag(bool flag);

@@ -1,4 +1,4 @@
-#include "PreAlert .h"
+#include "PreAlert.h"
 #include "Dxlib.h"
 void PreAlert::SetProbability(PreAlertProbability pro)
 {
@@ -24,7 +24,7 @@ bool PreAlert::Lottery()
         break;
 
     case PreAlertProbability::Pr90:
-        probability = 99;
+        probability = 90;
         break;
     }
 

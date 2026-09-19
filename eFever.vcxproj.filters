@@ -134,7 +134,7 @@
     <ClInclude Include="PlayerBase.h">
       <Filter>ヘッダー ファイル\Player</Filter>
     </ClInclude>
-    <ClInclude Include="PreAlert .h">
+    <ClInclude Include="PreAlert.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="TurnManager.h">

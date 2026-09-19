@@ -1,6 +1,10 @@
 #include "SP.h"
 #include "DxLib.h"
 
+SP::~SP()
+{
+	DeleteGraph(puchun);
+}
 
 void SP::Init()
 {

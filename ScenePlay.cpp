@@ -54,7 +54,7 @@ sUpdate(ScenePlay)
 
 sDraw(ScenePlay)
 {
-	DrawExtendGraph(0, 0, WINDOW_WI, WINDOW_HI, BG, TRUE);
+	DrawExtendGraph(0, 0, WINDOW_WI, WINDOW_HI, BG, FALSE);
 	TM.Draw();
 	sp.Draw();
 }

@@ -16,4 +16,5 @@ class SceneResult : public SceneBase
 
 public:
 	SCENECLASS(SceneResult);
+	~SceneResult();
 };

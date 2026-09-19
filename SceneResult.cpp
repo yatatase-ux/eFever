@@ -13,6 +13,15 @@ sCONSTRUCTOR(SceneResult)
 	arrow_pos = { 750.0f, 570.0f };
 }
 
+SceneResult::~SceneResult()
+{
+	DeleteGraph(win_image);
+	DeleteGraph(lose_image);
+	DeleteGraph(arrow);
+	DeleteGraph(end_image);
+	DeleteGraph(continue_image);
+}
+
 sInput(SceneResult)
 {
 	if (key->Push(SPACE))

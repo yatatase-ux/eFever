@@ -9,7 +9,8 @@
 #include "PlayerBase.h"
 #include "DPadPlayer.h"
 #include "WASDPlayer.h"
-
+#include "SP.h"
+#include "PreAlert.h"
 
 class TurnManager
 {
@@ -25,6 +26,10 @@ private:
 	WinChecker winChecker;
 
 	Mark winner;
+
+	SP sp;
+
+	PreAlert pre;
 
 public:
 

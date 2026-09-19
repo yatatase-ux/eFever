@@ -9,7 +9,11 @@ protected:
 
 	Int2 selectCell;
 
-	int image;
+	int markImage;
+	int keyImage;
+	int decideImage;
+
+	float UIpos_x;
 
 public:
 	PlayerBase(KeyAction* arg_key)

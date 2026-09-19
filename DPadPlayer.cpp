@@ -4,12 +4,19 @@
 PlayerConstructor(DPadPlayer)
 {
 	selectCell = { 0, 0 };
-	image = LoadGraph("image/maru.png");
+	markImage = LoadGraph("image/maru.png");
+
+	keyImage = LoadGraph("image/Dpad.png");
+	decideImage = LoadGraph("image/enter.png");
+
+	UIpos_x = 1100.0f;
 }
 
 DPadPlayer::~DPadPlayer()
 {
-	DeleteGraph(image);
+	DeleteGraph(markImage);
+	DeleteGraph(keyImage);
+	DeleteGraph(decideImage);
 }
 
 PlayerInput(DPadPlayer)
@@ -50,8 +57,14 @@ PlayerUpdate(DPadPlayer)
 
 void DPadPlayer::Draw()
 {
-	DrawRotaGraph(1100, 200, 1.0, 0.0, image, TRUE);
-	DrawCenterText(1100.0f, 300.0f, "のターン", GetColor(255, 255, 0), 30);
+	DrawRotaGraph(UIpos_x, 200.0f, 1.0, 0.0, markImage, TRUE);
+	DrawCenterText(UIpos_x, 300.0f, "のターン", GetColor(255, 255, 0), 30);
+
+	DrawRotaGraph(UIpos_x, 400.0f, 0.7, 0.0, keyImage, TRUE);
+	DrawCenterText(UIpos_x, 500.0f, "で操作", GetColor(255, 255, 0), 30);
+
+	DrawRotaGraph(UIpos_x, 580.0f, 0.3, 0.0, decideImage, TRUE);
+	DrawCenterText(UIpos_x, 680.0f, "で決定", GetColor(255, 255, 0), 30);
 }
 
 void DPadPlayer::Sound()

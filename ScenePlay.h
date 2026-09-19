@@ -16,11 +16,13 @@ private:
 	int hantenkakutei_image;
 	int puchun_image;
 
+	int BG;
+
 	TurnManager TM;
 
 public:
 
 	SCENECLASS(ScenePlay);
-
+	~ScenePlay();
 };
 

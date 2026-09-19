@@ -8,6 +8,7 @@ void PreAlert::Init()
     pre_posy = -900;
 }
 
+//　　プチュンが始まるよ
 void PreAlert::Start()
 {
     active = true;
@@ -15,14 +16,16 @@ void PreAlert::Start()
     pre_posy = -900;
 }
 
-
+//  確率抽選
 bool PreAlert::Lottery()
 {
 
     return GetRand(99) < pre;
 }
 
-
+//  おてて落下
+//  おててが止まったら
+//  抽選
 void PreAlert::Update()
 {
     if (!active) return;
@@ -40,6 +43,7 @@ void PreAlert::Draw()
     DrawGraph(100, pre_posy, pre_img, TRUE);
 }
 
+//  プチュン中におてて消すように
 void PreAlert::Reset()
 {
     active = false;

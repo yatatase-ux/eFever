@@ -11,7 +11,7 @@ void SP::Init()
 	puchun = LoadGraph("image/puchun.mp4");
 	movie_flag = false;
 }
-
+//  プチュンながれるフラグ
 void SP::SetMovieFlag(bool flag)
 {
 	movie_flag = flag;
@@ -25,6 +25,7 @@ void SP::SetMovieFlag(bool flag)
 	}
 }
 
+//  プチュン
 void SP::Update()
 {
 	if (movie_flag)

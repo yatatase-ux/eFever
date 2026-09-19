@@ -1,5 +1,12 @@
 #include "PreAlert.h"
 #include "Dxlib.h"
+
+void PreAlert::Init()
+{
+    pro = PreAlertProbability::Pr20;
+}
+
+
 void PreAlert::SetProbability(PreAlertProbability pro)
 {
     this->pro = pro;

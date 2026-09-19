@@ -6,6 +6,7 @@ TM{TurnManager(key)}
 	Cell::ImageLoad();
 
 	sp.Init();
+	pre.Init();
 
 	hanten_image = LoadGraph("image/hanten.png");
 	kakutei_image = LoadGraph("image/kakutei.png");
@@ -29,7 +30,10 @@ sInput(ScenePlay)
 {
 	if (key->Push(ONE))
 	{
-		sp.SetMovieFlag(true);
+		if (pre.Lottery())
+		{
+			sp.SetMovieFlag(true);
+		}
 	}
 
 	bool GoResult = TM.Input();

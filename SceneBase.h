@@ -6,7 +6,8 @@ enum class SceneState
 	None,
 	OP,
 	Play,
-	Result
+	Result,
+	End
 };
 
 class SceneBase

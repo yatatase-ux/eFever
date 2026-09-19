@@ -139,6 +139,7 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="PlayerBase.cpp" />
     <ClCompile Include="PreAlert .cpp" />
+    <ClCompile Include="SceneEnd.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="SceneOP.cpp" />
     <ClCompile Include="ScenePlay.cpp" />
@@ -160,6 +161,7 @@
     <ClInclude Include="PlayerBase.h" />
     <ClInclude Include="PreAlert.h" />
     <ClInclude Include="SceneBase.h" />
+    <ClInclude Include="SceneEnd.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="SceneOP.h" />
     <ClInclude Include="ScenePlay.h" />

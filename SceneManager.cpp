@@ -1,4 +1,8 @@
 #include "SceneManager.h"
+#include "SceneOP.h"
+#include "ScenePlay.h"
+#include "SceneResult.h"
+#include "SceneEnd.h"
 
 SceneManager::SceneManager()
 {
@@ -44,6 +48,10 @@ void SceneManager::SceneChange(SceneState nextScene)
 
 	case SceneState::Result:
 		scene = std::make_unique<SceneResult>(&key);
+		break;
+
+	case SceneState::End:
+		scene = std::make_unique<SceneEnd>(&key);
 		break;
 	}
 }

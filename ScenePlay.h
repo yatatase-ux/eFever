@@ -7,6 +7,13 @@
 #include "Cell.h"
 #include "TurnManager.h"
 #include "PreAlert.h"
+
+enum class PlayStage
+{
+	InGame,
+	Result
+};
+
 class ScenePlay : public SceneBase
 {
 private:
@@ -20,6 +27,8 @@ private:
 	int BG;
 
 	TurnManager TM;
+
+	PlayStage stage;
 
 public:
 

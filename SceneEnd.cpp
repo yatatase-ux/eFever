@@ -20,7 +20,7 @@ SceneEnd::~SceneEnd()
 
 sInput(SceneEnd)
 {
-	if (key->Push(SPACE))
+	if (key->Push(ENTER) || key->Push(SPACE))
 	{
 		return SceneState::OP;
 	}

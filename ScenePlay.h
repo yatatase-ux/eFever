@@ -1,4 +1,6 @@
 #pragma once
+#include <memory>
+
 #include "SceneBase.h"
 #include "Float2.h"
 #include "Function.h"

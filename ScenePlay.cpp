@@ -3,7 +3,7 @@
 #include "WindowSize.h"
 
 sCONSTRUCTOR(ScenePlay),
-TM{TurnManager(key)}
+TM(key)
 {
 	Cell::ImageLoad();
 	hanten_image = LoadGraph("image/hanten.png");
@@ -11,7 +11,7 @@ TM{TurnManager(key)}
 	hantenkakutei_image = LoadGraph("image/hantenkakutei.png");
 	puchun_image = LoadGraph("image/puchun.jpg");
 
-	BG = LoadGraph("image/play_bg.png");
+	BG = LoadGraph("image/f9b8879c-64ef-44e5-a979-f6dcf5505d98.png");
 
 	circleImage = LoadGraph("image/maru.png");
 	crossImage = LoadGraph("image/batu.png");

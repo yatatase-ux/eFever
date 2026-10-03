@@ -31,9 +31,17 @@ private:
 
 	PreAlert pre;
 
+	int markImage[2];
+	int keyImage[2];
+	int decideImage[2];
+	Float2 UIpos[2];
+
+
 public:
 
 	TurnManager(KeyAction* arg_key);
+	~TurnManager();
+
 
 	bool Input();
 	bool Update();
@@ -44,5 +52,7 @@ public:
 	void ChangeTurn();
 
 	Mark GetWinner() { return winner; };
+
+	void UIDraw();
 };
 

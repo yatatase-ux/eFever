@@ -37,9 +37,6 @@ sInput(ScenePlay)
 	{
 	case PlayStage::InGame:
 	{
-
-	
-
 		bool GoResult = TM.Input();
 		if (GoResult)	
 		{

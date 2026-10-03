@@ -14,6 +14,7 @@ void PreAlert::Start()
     active = true;
     end = false;
     pre_posy = -900;
+    count = 120;
 }
 
 //  確率抽選
@@ -27,19 +28,34 @@ bool PreAlert::Lottery()
 //  抽選
 void PreAlert::Update()
 {
+    count--;
+    if(count > 0)
+    {        
     if (!active) return;
-    pre_posy += 100;
-    if (pre_posy >= 200)
+        pre_posy += 100;
+        if (pre_posy >= 200)
+        {
+            pre_posy = 200;
+            active = false;
+            end = true;
+        }
+    }
+    else
     {
-        pre_posy = 200;
-        active = false;
-        end = true;
+        pre_posy -= 100;
+        if (pre_posy <= -900)
+        {
+            pre_posy = -900;
+        }
     }
 }
 
 void PreAlert::Draw()
 {
-    DrawGraph(100, pre_posy, pre_img, TRUE);
+//    if(count > 0)
+    {
+        DrawGraph(100, pre_posy, pre_img, TRUE);
+    }
 }
 
 //  プチュン中におてて消すように

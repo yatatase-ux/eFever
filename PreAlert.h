@@ -7,6 +7,8 @@ class PreAlert
 	int pre_posy;
 	bool active;
 	bool end;
+
+	int count;
 public:
 	void Init();
 

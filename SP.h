@@ -18,7 +18,7 @@ public:
 	~SP();
 	void Init();
 	void Update();
-	void SetMovieFlag(bool flag);
+	void SetMovieFlag();
 	void Draw();
 	void end();
 };

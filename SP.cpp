@@ -12,11 +12,10 @@ void SP::Init()
 	movie_flag = false;
 }
 //  プチュンながれるフラグ
-void SP::SetMovieFlag(bool flag)
+void SP::SetMovieFlag()
 {
-	movie_flag = flag;
+	movie_flag = true;
 
-	if (movie_flag)
 	{
 		// 動画を最初に戻す
 		SeekMovieToGraph(puchun, 0);

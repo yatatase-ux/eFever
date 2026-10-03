@@ -19,7 +19,6 @@ void PreAlert::Start()
 //  Šm—¦’Š‘I
 bool PreAlert::Lottery()
 {
-
     return GetRand(99) < pre;
 }
 

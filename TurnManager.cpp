@@ -20,7 +20,7 @@ bool TurnManager::Input()
 
 	if (key->Push(ONE))
 	{
-		
+		pre.Start();
 	}
 
 	if (turnChange)
@@ -86,9 +86,10 @@ bool TurnManager::Update()
 	{
 		if (pre.Lottery())
 		{
-			sp.SetMovieFlag(true);
+			sp.SetMovieFlag();
 			pre.Reset();
 		}
+
 
 	}
 

@@ -1,6 +1,7 @@
 #include "Grid.h"
 #include "DxLib.h"
 #include "Function.h"
+#include <vector>
 
 Grid::Grid()
 {
@@ -82,4 +83,34 @@ bool Grid::SetMark(Turn now, Int2 selectCell)
 	cells[selectCell.y][selectCell.x].SetMark(setMark);
 
 	return false;
+}
+
+void Grid::SpecialEffect()
+{
+	Int2 changeCell = { -1, -1 };
+	std::vector<Int2> mightCircle;
+	std::vector<Int2> mightCross;
+
+	for (int h = 0; h < 3; h++)
+	{
+		for (int w = 0; w < 3; w++)
+		{
+			Mark mark = cells[h][w].GetMark();
+			if (mark == Mark::None) continue;
+
+			if(mark == Mark::Circle)
+				mightCircle.push_back({ w, h });
+			else if(mark == Mark::Cross)
+				mightCross.push_back({ w, h });
+		}
+	}
+
+	// ○か×どちらかが1つも置かれていなければ入れ替え不可能なので早期リターン
+	if (mightCircle.empty() || mightCross.empty()) return;
+
+	int circleindex = GetRand(mightCircle.size() - 1);
+	int crossindex = GetRand(mightCross.size() - 1);
+
+	cells[mightCircle[circleindex].y][mightCircle[circleindex].x].SetMark(Mark::Cross);
+	cells[mightCross[crossindex].y][mightCross[crossindex].x].SetMark(Mark::Circle);
 }

@@ -21,4 +21,9 @@ public:
 	void SetMovieFlag();
 	void Draw();
 	void end();
+
+	bool IsMovieFinished() const
+	{
+		return !movie_flag;
+	}
 };

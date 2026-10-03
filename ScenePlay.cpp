@@ -58,7 +58,11 @@ sInput(ScenePlay)
 sUpdate(ScenePlay)
 {
 	bool GoNextScene = TM.Update();
-	if (GoNextScene)	return SceneState::End;	
+	if (GoNextScene)
+	{
+		stage = PlayStage::Result;
+		winner = TM.GetWinner();
+	}
 
 	return SceneState::None;
 }

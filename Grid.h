@@ -46,4 +46,6 @@ public:
 	/// <param name="col">2つ目の添字</param>
 	/// <returns>指定したセルのマーク</returns>
 	Mark GetCellMark(int row, int col) const { return cells[row][col].GetMark(); };
+
+	void SpecialEffect();
 };

@@ -115,6 +115,17 @@ bool TurnManager::Update()
 		{
 			sp.SetMovieFlag();
 			pre.Reset();
+			grid.SpecialEffect();
+		}
+	}
+
+	if (sp.IsMovieFinished())
+	{
+		// ƒQ[ƒ€‚ªI—¹‚·‚é
+		GameState result = winChecker.CheckFinish(winner);
+		if (result != GameState::InProgress)
+		{
+			return true;
 		}
 	}
 

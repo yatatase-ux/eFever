@@ -7,14 +7,14 @@ public:
 	int y = 0;
 
 	Int2();									//	コンストラクタ
-	Int2(float x, float y);
+	Int2(int x, int y);
 
 	Int2& operator = (const Int2& f2);	//	= 演算子のオーバーロード
 
 	Int2& operator += (const Int2& f2);	//	+= 演算子のオーバーロード
 	Int2& operator -= (const Int2& f2);	//	-= 演算子のオーバーロード
-	Int2& operator *= (const float f);	//	*= 演算子のオーバーロード
-	Int2& operator /= (const float f);	//	/= 演算子のオーバーロード
+	Int2& operator *= (const int f);	//	*= 演算子のオーバーロード
+	Int2& operator /= (const int f);	//	/= 演算子のオーバーロード
 };
 
 //	+ 演算子のオーバーロード
@@ -22,6 +22,6 @@ Int2 operator + (const Int2& f2_1, const Int2& f2_2);
 //	- 演算子のオーバーロード
 Int2 operator - (const Int2& f2_1, const Int2& f2_2);
 //	* 演算子のオーバーロード
-Int2 operator * (const Int2& f2, const float f);
+Int2 operator * (const Int2& f2, const int f);
 //	/ 演算子のオーバーロード
-Int2 operator / (const Int2& f2, const float f);
+Int2 operator / (const Int2& f2, const int f);

@@ -37,6 +37,12 @@
     <Filter Include="ソース ファイル\Board">
       <UniqueIdentifier>{fdf0aa24-7f92-49f2-a9dd-d9c0006578f5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Special">
+      <UniqueIdentifier>{beddc46e-a901-4343-a66c-086bbe5afdbf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Special">
+      <UniqueIdentifier>{9b285ab3-7de6-4500-8713-bc2af92ee286}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SceneManager.cpp">
@@ -53,12 +59,6 @@
     </ClCompile>
     <ClCompile Include="DPadPlayer.cpp">
       <Filter>ソース ファイル\Player</Filter>
-    </ClCompile>
-    <ClCompile Include="SP.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="PreAlert .cpp">
-      <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="WASDPlayer.cpp">
       <Filter>ソース ファイル\Player</Filter>
@@ -93,6 +93,15 @@
     <ClCompile Include="WinChecker.cpp">
       <Filter>ソース ファイル\Board</Filter>
     </ClCompile>
+    <ClCompile Include="SceneEnd.cpp">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="PreAlert .cpp">
+      <Filter>ソース ファイル\Special</Filter>
+    </ClCompile>
+    <ClCompile Include="SP.cpp">
+      <Filter>ソース ファイル\Special</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SceneBase.h">
@@ -113,9 +122,6 @@
     <ClInclude Include="DPadPlayer.h">
       <Filter>ヘッダー ファイル\Player</Filter>
     </ClInclude>
-    <ClInclude Include="SP.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="WASDPlayer.h">
       <Filter>ヘッダー ファイル\Player</Filter>
     </ClInclude>
@@ -133,9 +139,6 @@
     </ClInclude>
     <ClInclude Include="PlayerBase.h">
       <Filter>ヘッダー ファイル\Player</Filter>
-    </ClInclude>
-    <ClInclude Include="PreAlert.h">
-      <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="TurnManager.h">
       <Filter>ヘッダー ファイル\Player</Filter>
@@ -157,6 +160,15 @@
     </ClInclude>
     <ClInclude Include="TurnEnum.h">
       <Filter>ヘッダー ファイル\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneEnd.h">
+      <Filter>ヘッダー ファイル\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="PreAlert.h">
+      <Filter>ヘッダー ファイル\Special</Filter>
+    </ClInclude>
+    <ClInclude Include="SP.h">
+      <Filter>ヘッダー ファイル\Special</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

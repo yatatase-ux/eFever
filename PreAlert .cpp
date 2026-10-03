@@ -31,7 +31,7 @@ void PreAlert::Update()
     count--;
     if(count > 0)
     {        
-    if (!active) return;
+        if (!active) return;
         pre_posy += 100;
         if (pre_posy >= 200)
         {

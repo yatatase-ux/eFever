@@ -76,19 +76,22 @@ sDraw(ScenePlay)
 		// 元に戻す
 		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 
-		switch (winner)
+		if (winner == Mark::Circle)
 		{
-		case Mark::Circle:
 			DrawRotaGraph(WINDOW_WF / 2.0f, WINDOW_HF / 2.0f, 3.0f, 0.0f, circleImage, TRUE);
 			DrawCenterText(WINDOW_WF / 2.0f, WINDOW_HF / 2.0f, "十字キープレイヤーの勝利！！",
 				GetColor(255, 255, 0), 75.0f);
-			break;
-
-		case Mark::Cross:
+		}
+		else if (winner == Mark::Cross)
+		{
 			DrawRotaGraph(WINDOW_WF / 2.0f, WINDOW_HF / 2.0f, 3.0f, 0.0f, crossImage, TRUE);
 			DrawCenterText(WINDOW_WF / 2.0f, WINDOW_HF / 2.0f, "WASDプレイヤーの勝利！！",
 				GetColor(255, 255, 0), 75.0f);
-			break;
+		}
+		else
+		{
+			DrawCenterText(WINDOW_WF / 2.0f, WINDOW_HF / 2.0f, "引き分け～(つまんねーの)",
+				GetColor(255, 255, 0), 75.0f);
 		}
 	}
 }

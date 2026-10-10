@@ -102,6 +102,11 @@ bool TurnManager::Input()
 
 bool TurnManager::Update()
 {
+	shakeX = 0;
+	shakeY = 0;
+
+	grid.Update();
+
 	switch (effectState)
 	{
 	case EffectState::Falling:
@@ -116,6 +121,8 @@ bool TurnManager::Update()
 	case EffectState::Wait:
 		// 手が落ちきった後のディレイ
 		delay--;
+		shakeX = GetRand(SHAKE_POWER * 2) - SHAKE_POWER;
+		shakeY = GetRand(SHAKE_POWER * 2) - SHAKE_POWER;
 		if (delay <= 0)
 		{
 			// ディレイ終了 → ここで一度だけ抽選する
@@ -177,7 +184,8 @@ bool TurnManager::Update()
 
 void TurnManager::Draw()
 {
-	grid.Draw(selectCell);
+	int image = (nowTurn == Turn::Dpad) ? markImage[0] : markImage[1];
+	grid.Draw(image,selectCell);
 	player->Draw();
 	UIDraw();
 	// 半透明(0：完全透明　～　255：完全不透明)

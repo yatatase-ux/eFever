@@ -15,13 +15,16 @@ private:
 
 	Cell cells[3][3];
 
+	float alpha = 50.0f;
+	float diff = -1.0f;
+
 public:
 
 	Grid();
 
 	void Input();
 	bool Update();
-	void Draw(Int2 selectCell);
+	void Draw(int image, Int2 selectCell);
 
 	/// <summary>
 	/// 指定したセルにマークを設定

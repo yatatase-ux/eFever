@@ -3,7 +3,7 @@
 
 void PreAlert::Init()
 {
-    pre = 200;
+    pre = 40;
     pre_img = LoadGraph("image/pre.png");
     pre_posy = -900;
 }

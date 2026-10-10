@@ -40,6 +40,10 @@ private:
 
 	PreAlert pre;
 
+	int shakeX = 0;
+	int shakeY = 0;
+	static constexpr int SHAKE_POWER = 5;
+
 	int markImage[2];
 	int keyImage[2];
 	int decideImage[2];
@@ -50,6 +54,9 @@ private:
 	float alpha = 0;
 
 public:
+
+	int GetShakeX() const { return shakeX; }
+	int GetShakeY() const { return shakeY; }
 
 	TurnManager(KeyAction* arg_key);
 	~TurnManager();

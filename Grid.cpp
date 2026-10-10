@@ -40,10 +40,14 @@ void Grid::Input()
 
 bool Grid::Update()
 {
+	alpha += 0.5f * diff;
+	if (alpha < 30.0f) diff = 1.0f;
+	else if (alpha > 80.0f) diff = -1.0f;
+
 	return false;
 }
 
-void Grid::Draw(Int2 selectCell)
+void Grid::Draw(int image, Int2 selectCell)
 {
 	// 緑の盤
 	DrawCenterBox(gridPos, gridSize, GetColor(0, 0 , 0), TRUE);
@@ -69,7 +73,15 @@ void Grid::Draw(Int2 selectCell)
 	// 選択しているマスの描画
 	Float2 selectPos = cells[selectCell.y][selectCell.x].GetPos();
 	DrawCenterBox(selectPos, { gridSize.x / 3.0f, gridSize.y / 3.0f }, GetColor(255, 255, 0), FALSE, 5.0f);
-	
+	if(!cells[selectCell.y][selectCell.x].CheckHasMark())
+	{
+		// 半透明(0：完全透明　～　255：完全不透明)
+		SetDrawBlendMode(DX_BLENDMODE_ALPHA, alpha);
+		DrawRotaGraphF(selectPos.x, selectPos.y, 1.0f, 0.0f, image, TRUE);
+		// 元に戻す
+		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
+	}
+
 }
 
 bool Grid::SetMark(Turn now, Int2 selectCell)

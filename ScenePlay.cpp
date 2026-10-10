@@ -69,7 +69,11 @@ sUpdate(ScenePlay)
 
 sDraw(ScenePlay)
 {
-	DrawExtendGraph(0, 0, WINDOW_WI, WINDOW_HI, BG, FALSE);
+	{
+		int x = 0 + TM.GetShakeX();
+		int y = 0 + TM.GetShakeY();
+		DrawExtendGraph( x, y, x +WINDOW_WF, y +  WINDOW_HF, BG, FALSE);
+	}
 	TM.Draw();
 	
 	if (stage == PlayStage::Result)

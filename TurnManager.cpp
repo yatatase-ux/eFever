@@ -48,6 +48,7 @@ bool TurnManager::Input()
 	if (key->Push(ONE))
 	{
 		pre.Start();
+		effectState = EffectState::Falling;  // 落下開始
 	}
 
 	if (turnChange)
@@ -89,7 +90,8 @@ bool TurnManager::Input()
 			int random = GetRand(100);
 			if(random < 20)
 			{
-				pre.Start();	// 特殊演出処理
+				pre.Start();
+				effectState = EffectState::Falling;  // 落下開始
 			}
 		}
 
@@ -100,28 +102,63 @@ bool TurnManager::Input()
 
 bool TurnManager::Update()
 {
-	player->Update();
-	selectCell = player->GetSelectCell();
+	switch (effectState)
+	{
+	case EffectState::Falling:
+		// 手が落下中。落ちきったら true が返ってくる
+		if (pre.Update())
+		{
+			effectState = EffectState::Wait;
+			delay = 60;     // 60フレーム(約1秒)待つ
+		}
+		break;
 
-//	bool finishGame = winChecker.CheckFinish();
+	case EffectState::Wait:
+		// 手が落ちきった後のディレイ
+		delay--;
+		if (delay <= 0)
+		{
+			// ディレイ終了 → ここで一度だけ抽選する
+			if (pre.Lottery())
+			{
+				// 当選:特殊演出を開始
+				sp.SetMovieFlag();
+				pre.Reset();            // 手を消す
+				grid.SpecialEffect();
+				effectState = EffectState::Playing;
+			}
+			else
+			{
+				// 外れ:手を消して通常のプレイに戻る
+				pre.Reset();
+				effectState = EffectState::None;
+			}
+		}
+		break;
+
+	case EffectState::Playing:
+		// 演出の再生が終わるのを待つ(下の sp.Update() の後で判定)
+		break;
+
+	default:
+		break;
+	}
+
+	// 演出中以外は、プレイヤーの操作を受け付ける
+	if (effectState == EffectState::None || effectState == EffectState::Falling)
+	{
+		player->Update();
+		selectCell = player->GetSelectCell();
+	}
 
 	sp.Update();
 
-	pre.Update();
-
-	if (pre.End())
+	// 演出再生中だけ、終了判定を見る
+	if (effectState == EffectState::Playing && sp.IsMovieFinished())
 	{
-		if (pre.Lottery())
-		{
-			sp.SetMovieFlag();
-			pre.Reset();
-			grid.SpecialEffect();
-		}
-	}
+		effectState = EffectState::None;
 
-	if (sp.IsMovieFinished())
-	{
-		// ゲームが終了する時
+		// 演出で盤面が変わったので、ゲーム終了かどうかを判定する
 		GameState result = winChecker.CheckFinish(winner);
 		if (result != GameState::InProgress)
 		{
@@ -139,6 +176,8 @@ void TurnManager::Draw()
 	UIDraw();
 	sp.Draw();
 	pre.Draw();
+
+//	DrawFormatString(20, 20, GetColor(255, 255, 255), "%d", (int)effectState);
 }
 
 Int2 TurnManager::GetSelectCell()

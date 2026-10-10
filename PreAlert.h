@@ -13,7 +13,7 @@ public:
 	void Init();
 
 	bool Lottery();
-	void Update();
+	bool Update();
 	void Draw();
 
 	void Start();

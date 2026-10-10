@@ -3,7 +3,7 @@
 
 void PreAlert::Init()
 {
-    pre = 20;
+    pre = 100;
     pre_img = LoadGraph("image/pre.png");
     pre_posy = -900;
 }
@@ -26,18 +26,19 @@ bool PreAlert::Lottery()
 //  ‚¨‚Ä‚Ä—Ž‰º
 //  ‚¨‚Ä‚Ä‚ªŽ~‚Ü‚Á‚½‚ç
 //  ’Š‘I
-void PreAlert::Update()
+bool PreAlert::Update()
 {
     count--;
     if(count > 0)
     {        
-        if (!active) return;
+        if (!active) return false;
+
         pre_posy += 100;
         if (pre_posy >= 200)
         {
             pre_posy = 200;
             active = false;
-            end = true;
+            return true;
         }
     }
     else
@@ -48,6 +49,8 @@ void PreAlert::Update()
             pre_posy = -900;
         }
     }
+
+    return false;
 }
 
 void PreAlert::Draw()

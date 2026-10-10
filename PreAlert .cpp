@@ -3,7 +3,7 @@
 
 void PreAlert::Init()
 {
-    pre = 100;
+    pre = 200;
     pre_img = LoadGraph("image/pre.png");
     pre_posy = -900;
 }
@@ -43,11 +43,7 @@ bool PreAlert::Update()
     }
     else
     {
-        pre_posy -= 100;
-        if (pre_posy <= -900)
-        {
-            pre_posy = -900;
-        }
+       
     }
 
     return false;

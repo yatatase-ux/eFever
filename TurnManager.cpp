@@ -126,6 +126,7 @@ bool TurnManager::Update()
 				pre.Reset();            // 手を消す
 				grid.SpecialEffect();
 				effectState = EffectState::Playing;
+				alpha = 255;
 			}
 			else
 			{
@@ -149,6 +150,7 @@ bool TurnManager::Update()
 	{
 		player->Update();
 		selectCell = player->GetSelectCell();
+		alpha --;
 	}
 
 	sp.Update();
@@ -158,6 +160,10 @@ bool TurnManager::Update()
 	{
 		effectState = EffectState::None;
 
+	}
+
+	if(alpha < 0)
+	{
 		// 演出で盤面が変わったので、ゲーム終了かどうかを判定する
 		GameState result = winChecker.CheckFinish(winner);
 		if (result != GameState::InProgress)
@@ -174,8 +180,14 @@ void TurnManager::Draw()
 	grid.Draw(selectCell);
 	player->Draw();
 	UIDraw();
+	// 半透明(0：完全透明　～　255：完全不透明)
+	SetDrawBlendMode(DX_BLENDMODE_ALPHA, alpha);
+	DrawFillBox(0, 0, WINDOW_WI, WINDOW_HF, GetColor(0, 0, 0));
+	// 元に戻す
+	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 	sp.Draw();
 	pre.Draw();
+
 
 //	DrawFormatString(20, 20, GetColor(255, 255, 255), "%d", (int)effectState);
 }

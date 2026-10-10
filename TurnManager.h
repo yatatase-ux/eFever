@@ -47,6 +47,7 @@ private:
 
 	EffectState effectState = EffectState::None;
 	int delay = 0;
+	float alpha = 0;
 
 public:
 

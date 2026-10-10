@@ -40,9 +40,30 @@ WinChecker::WinChecker(Grid* arg_grid)
 
 GameState WinChecker::CheckFinish(Mark& out_winner)
 {
-	// まず勝者がいるか確認する(以前作った8ライン総当たりの処理)
-	if (CheckWin(out_winner))
+	bool maruWin = false;	// ○が揃っているか
+	bool batuWin = false;	// ×が揃っているか
+
+	// 全ラインを調べて、○と×それぞれが揃っているか確認する
+	CheckWin(maruWin, batuWin);
+
+	// 演出の結果、○と×が同時に揃った場合は引き分け
+	if (maruWin && batuWin)
 	{
+		out_winner = Mark::None;	// 勝者なし
+		return GameState::Draw;
+	}
+
+	// ○だけ揃っている
+	if (maruWin)
+	{
+		out_winner = Mark::Circle;
+		return GameState::Win;
+	}
+
+	// ×だけ揃っている
+	if (batuWin)
+	{
+		out_winner = Mark::Cross;
 		return GameState::Win;
 	}
 
@@ -56,17 +77,15 @@ GameState WinChecker::CheckFinish(Mark& out_winner)
 	return GameState::InProgress;
 }
 
-bool WinChecker::CheckWin(Mark& out_winner) const
+// 全ラインを調べて、○と×それぞれが揃っているかを out 引数に入れる
+void WinChecker::CheckWin(bool& out_maruWin, bool& out_batuWin) const
 {
 	for (int i = 0; i < 8; ++i)
 	{
 		const WinLine& line = winLines[i];
 
 		// 1マス目の状態を基準として取得する
-		// 基準のマスとは winLines の一番左に書いてあるマス（詳しくは上に書いてる F12で確認）
-		int row0 = line.cells[0][0];
-		int col0 = line.cells[0][1];
-		Mark first = grid->GetCellMark(row0, col0);	// 基準のマーク
+		Mark first = grid->GetCellMark(line.cells[0][0], line.cells[0][1]);
 
 		// 1マス目が空なら、このラインは揃いようがないので次へ
 		if (first == Mark::None)
@@ -74,34 +93,31 @@ bool WinChecker::CheckWin(Mark& out_winner) const
 			continue;
 		}
 
-		// 2マス目・3マス目が、1マス目と同じ状態かどうかを確認する
+		// 2マス目・3マス目が、1マス目と同じかどうか確認する
 		bool allSame = true;
 		for (int j = 1; j < 3; ++j)
 		{
-			int row = line.cells[j][0];
-			int col = line.cells[j][1];
-
-			// 基準のマスと同じマークでなければ
-			if (grid->GetCellMark(row, col) != first)
+			if (grid->GetCellMark(line.cells[j][0], line.cells[j][1]) != first)
 			{
-				allSame = false;	// フラッグをFlaseにしてループを抜ける
+				allSame = false;
 				break;
 			}
-
-			// 2マス目3マス目が基準のマークと同じマークであればフラッグはTrueのままループを抜ける
 		}
 
-		// 3マスとも同じ状態だった場合、勝者を確定する
+		// 3マス揃っていたら、そのマークの勝ちフラグを立てる
+		// ※ここで return しないのがポイント(残りのラインも調べる)
 		if (allSame)
 		{
-			out_winner = first;		// 勝者のマークをout_winnerに入れる
-			return true;
+			if (first == Mark::Circle)
+			{
+				out_maruWin = true;
+			}
+			else if (first == Mark::Cross)
+			{
+				out_batuWin = true;
+			}
 		}
-
-		// 次の列・行を見る
 	}
-
-	return false; // 揃っているラインがなければ、まだ決着していない
 }
 
 /// <summary>

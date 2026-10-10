@@ -21,7 +21,7 @@ private:
 	/// </summary>
 	/// <param name="out_winner">勝者のマークを格納する出力パラメータ。勝者が見つかったときに設定される</param>
 	/// <returns>勝者が存在する場合は true、存在しない場合は false。</returns>
-	bool CheckWin(Mark& out_winner) const;
+	void CheckWin(bool& out_maruWin, bool& out_batuWin) const;
 
 	/// <summary>
 	/// 盤面が9マスとも埋まっているかチェック
